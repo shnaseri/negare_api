@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 import 'package:test/test.dart';
 
 // tests for ArtPieceDetail
@@ -35,5 +35,13 @@ void main() {
     test('to test the property `categoryId`', () async {
       // TODO
     });
+
+    // List<int> imageIds (default value: const [])
+    test('to test the property `imageIds`', () async {
+      // TODO
+    });
+
+
   });
+
 }

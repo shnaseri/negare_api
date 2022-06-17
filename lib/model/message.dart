@@ -25,7 +25,7 @@ class Message {
 
   String type;
 
-  bool isUserSender;
+  String isUserSender;
 
   String content;
 
@@ -34,29 +34,26 @@ class Message {
   DateTime createdAt;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Message &&
-          other.id == id &&
-          other.type == type &&
-          other.isUserSender == isUserSender &&
-          other.content == content &&
-          other.updatedAt == updatedAt &&
-          other.createdAt == createdAt;
+  bool operator ==(Object other) => identical(this, other) || other is Message &&
+     other.id == id &&
+     other.type == type &&
+     other.isUserSender == isUserSender &&
+     other.content == content &&
+     other.updatedAt == updatedAt &&
+     other.createdAt == createdAt;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (id == null ? 0 : id.hashCode) +
-      (type == null ? 0 : type.hashCode) +
-      (isUserSender == null ? 0 : isUserSender.hashCode) +
-      (content == null ? 0 : content.hashCode) +
-      (updatedAt == null ? 0 : updatedAt.hashCode) +
-      (createdAt == null ? 0 : createdAt.hashCode);
+  // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id.hashCode) +
+    (type == null ? 0 : type.hashCode) +
+    (isUserSender == null ? 0 : isUserSender.hashCode) +
+    (content == null ? 0 : content.hashCode) +
+    (updatedAt == null ? 0 : updatedAt.hashCode) +
+    (createdAt == null ? 0 : createdAt.hashCode);
 
   @override
-  String toString() =>
-      'Message[id=$id, type=$type, isUserSender=$isUserSender, content=$content, updatedAt=$updatedAt, createdAt=$createdAt]';
+  String toString() => 'Message[id=$id, type=$type, isUserSender=$isUserSender, content=$content, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -90,7 +87,7 @@ class Message {
       return Message(
         id: mapValueOfType<int>(json, r'id'),
         type: mapValueOfType<String>(json, r'type'),
-        isUserSender: mapValueOfType<bool>(json, r'is_user_sender'),
+        isUserSender: mapValueOfType<String>(json, r'is_user_sender'),
         content: mapValueOfType<String>(json, r'content'),
         updatedAt: mapDateTime(json, r'updated_at', ''),
         createdAt: mapDateTime(json, r'created_at', ''),
@@ -99,43 +96,36 @@ class Message {
     return null;
   }
 
-  static List<Message> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(Message.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <Message>[];
+  static List<Message> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(Message.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <Message>[];
 
   static Map<String, Message> mapFromJson(dynamic json) {
     final map = <String, Message>{};
     if (json is Map && json.isNotEmpty) {
       json
-          .cast<String, dynamic>()
-          .forEach((key, dynamic value) => map[key] = Message.fromJson(value));
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = Message.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of Message-objects as value to a dart map
-  static Map<String, List<Message>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<Message>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Message>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = Message.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = Message.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

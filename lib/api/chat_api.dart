@@ -10,6 +10,7 @@
 
 part of openapi.api;
 
+
 class ChatApi {
   ChatApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
@@ -19,13 +20,10 @@ class ChatApi {
   /// Parameters:
   ///
   /// * [String] chatCode (required):
-  Future<Response> chatGetAllChatMessagesListWithHttpInfo(
-    String chatCode,
-  ) async {
+  Future<Response> chatGetAllChatMessagesListWithHttpInfo(String chatCode,) async {
     // Verify required params are set.
     if (chatCode == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: chatCode');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: chatCode');
     }
 
     // ignore: prefer_const_declarations
@@ -38,11 +36,11 @@ class ChatApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    queryParams.addAll(
-        _convertParametersForCollectionFormat('', 'chat_code', chatCode));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'chat_code', chatCode));
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
+
 
     return apiClient.invokeAPI(
       path,
@@ -59,12 +57,8 @@ class ChatApi {
   /// Parameters:
   ///
   /// * [String] chatCode (required):
-  Future<List<Message>> chatGetAllChatMessagesList(
-    String chatCode,
-  ) async {
-    final response = await chatGetAllChatMessagesListWithHttpInfo(
-      chatCode,
-    );
+  Future<List<Message>> chatGetAllChatMessagesList(String chatCode,) async {
+    final response = await chatGetAllChatMessagesListWithHttpInfo(chatCode,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -73,10 +67,10 @@ class ChatApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Message>')
-              as List)
-          .cast<Message>()
-          .toList(growable: false);
+      return (await apiClient.deserializeAsync(responseBody, 'List<Message>') as List)
+        .cast<Message>()
+        .toList(growable: false);
+
     }
     return Future<List<Message>>.value();
   }
@@ -95,6 +89,7 @@ class ChatApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
+
 
     return apiClient.invokeAPI(
       path,
@@ -118,10 +113,10 @@ class ChatApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Chat>')
-              as List)
-          .cast<Chat>()
-          .toList(growable: false);
+      return (await apiClient.deserializeAsync(responseBody, 'List<Chat>') as List)
+        .cast<Chat>()
+        .toList(growable: false);
+
     }
     return Future<List<Chat>>.value();
   }

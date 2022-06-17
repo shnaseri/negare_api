@@ -19,21 +19,20 @@ class ArtPieceContent {
   int contentId;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ArtPieceContent && other.contentId == contentId;
+  bool operator ==(Object other) => identical(this, other) || other is ArtPieceContent &&
+     other.contentId == contentId;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (contentId == null ? 0 : contentId.hashCode);
+  // ignore: unnecessary_parenthesis
+    (contentId == null ? 0 : contentId.hashCode);
 
   @override
   String toString() => 'ArtPieceContent[contentId=$contentId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    json[r'content_id'] = contentId;
+      json[r'content_id'] = contentId;
     return json;
   }
 
@@ -50,44 +49,36 @@ class ArtPieceContent {
     return null;
   }
 
-  static List<ArtPieceContent> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json
-              .map(ArtPieceContent.fromJson)
-              .toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <ArtPieceContent>[];
+  static List<ArtPieceContent> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(ArtPieceContent.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <ArtPieceContent>[];
 
   static Map<String, ArtPieceContent> mapFromJson(dynamic json) {
     final map = <String, ArtPieceContent>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach(
-          (key, dynamic value) => map[key] = ArtPieceContent.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = ArtPieceContent.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of ArtPieceContent-objects as value to a dart map
-  static Map<String, List<ArtPieceContent>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<ArtPieceContent>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<ArtPieceContent>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = ArtPieceContent.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = ArtPieceContent.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

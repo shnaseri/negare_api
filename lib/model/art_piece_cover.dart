@@ -22,21 +22,22 @@ class ArtPieceCover {
   ArtPieceCoverTypeEnum type;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ArtPieceCover && other.cover == cover && other.type == type;
+  bool operator ==(Object other) => identical(this, other) || other is ArtPieceCover &&
+     other.cover == cover &&
+     other.type == type;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (cover == null ? 0 : cover.hashCode) + (type == null ? 0 : type.hashCode);
+  // ignore: unnecessary_parenthesis
+    (cover == null ? 0 : cover.hashCode) +
+    (type == null ? 0 : type.hashCode);
 
   @override
   String toString() => 'ArtPieceCover[cover=$cover, type=$type]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    json[r'cover'] = cover;
+      json[r'cover'] = cover;
     if (type != null) {
       json[r'type'] = type;
     }
@@ -57,45 +58,39 @@ class ArtPieceCover {
     return null;
   }
 
-  static List<ArtPieceCover> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(ArtPieceCover.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <ArtPieceCover>[];
+  static List<ArtPieceCover> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(ArtPieceCover.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <ArtPieceCover>[];
 
   static Map<String, ArtPieceCover> mapFromJson(dynamic json) {
     final map = <String, ArtPieceCover>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach(
-          (key, dynamic value) => map[key] = ArtPieceCover.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = ArtPieceCover.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of ArtPieceCover-objects as value to a dart map
-  static Map<String, List<ArtPieceCover>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<ArtPieceCover>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<ArtPieceCover>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = ArtPieceCover.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = ArtPieceCover.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+
 
 class ArtPieceCoverTypeEnum {
   /// Instantiate a new enum with the provided [value].
@@ -121,27 +116,18 @@ class ArtPieceCoverTypeEnum {
   ];
 
   static ArtPieceCoverTypeEnum fromJson(dynamic value) =>
-      ArtPieceCoverTypeEnumTypeTransformer().decode(value);
+    ArtPieceCoverTypeEnumTypeTransformer().decode(value);
 
-  static List<ArtPieceCoverTypeEnum> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json
-              .map(ArtPieceCoverTypeEnum.fromJson)
-              .toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <ArtPieceCoverTypeEnum>[];
+  static List<ArtPieceCoverTypeEnum> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(ArtPieceCoverTypeEnum.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <ArtPieceCoverTypeEnum>[];
 }
 
 /// Transformation class that can [encode] an instance of [ArtPieceCoverTypeEnum] to String,
 /// and [decode] dynamic data back to [ArtPieceCoverTypeEnum].
 class ArtPieceCoverTypeEnumTypeTransformer {
-  factory ArtPieceCoverTypeEnumTypeTransformer() =>
-      _instance ??= const ArtPieceCoverTypeEnumTypeTransformer._();
+  factory ArtPieceCoverTypeEnumTypeTransformer() => _instance ??= const ArtPieceCoverTypeEnumTypeTransformer._();
 
   const ArtPieceCoverTypeEnumTypeTransformer._();
 
@@ -158,12 +144,9 @@ class ArtPieceCoverTypeEnumTypeTransformer {
   ArtPieceCoverTypeEnum decode(dynamic data, {bool allowNull}) {
     if (data != null) {
       switch (data.toString()) {
-        case r'M':
-          return ArtPieceCoverTypeEnum.M;
-        case r'V':
-          return ArtPieceCoverTypeEnum.V;
-        case r'P':
-          return ArtPieceCoverTypeEnum.P;
+        case r'M': return ArtPieceCoverTypeEnum.M;
+        case r'V': return ArtPieceCoverTypeEnum.V;
+        case r'P': return ArtPieceCoverTypeEnum.P;
         default:
           if (allowNull == false) {
             throw ArgumentError('Unknown enum value to decode: $data');
@@ -176,3 +159,5 @@ class ArtPieceCoverTypeEnumTypeTransformer {
   /// Singleton [ArtPieceCoverTypeEnumTypeTransformer] instance.
   static ArtPieceCoverTypeEnumTypeTransformer _instance;
 }
+
+

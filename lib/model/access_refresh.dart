@@ -22,25 +22,23 @@ class AccessRefresh {
   String refresh;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is AccessRefresh &&
-          other.access == access &&
-          other.refresh == refresh;
+  bool operator ==(Object other) => identical(this, other) || other is AccessRefresh &&
+     other.access == access &&
+     other.refresh == refresh;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (access == null ? 0 : access.hashCode) +
-      (refresh == null ? 0 : refresh.hashCode);
+  // ignore: unnecessary_parenthesis
+    (access == null ? 0 : access.hashCode) +
+    (refresh == null ? 0 : refresh.hashCode);
 
   @override
   String toString() => 'AccessRefresh[access=$access, refresh=$refresh]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    json[r'access'] = access;
-    json[r'refresh'] = refresh;
+      json[r'access'] = access;
+      json[r'refresh'] = refresh;
     return json;
   }
 
@@ -58,42 +56,36 @@ class AccessRefresh {
     return null;
   }
 
-  static List<AccessRefresh> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(AccessRefresh.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <AccessRefresh>[];
+  static List<AccessRefresh> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(AccessRefresh.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <AccessRefresh>[];
 
   static Map<String, AccessRefresh> mapFromJson(dynamic json) {
     final map = <String, AccessRefresh>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach(
-          (key, dynamic value) => map[key] = AccessRefresh.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = AccessRefresh.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of AccessRefresh-objects as value to a dart map
-  static Map<String, List<AccessRefresh>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<AccessRefresh>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<AccessRefresh>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = AccessRefresh.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = AccessRefresh.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

@@ -19,14 +19,13 @@ class InlineResponse2004 {
   int userId;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is InlineResponse2004 && other.userId == userId;
+  bool operator ==(Object other) => identical(this, other) || other is InlineResponse2004 &&
+     other.userId == userId;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (userId == null ? 0 : userId.hashCode);
+  // ignore: unnecessary_parenthesis
+    (userId == null ? 0 : userId.hashCode);
 
   @override
   String toString() => 'InlineResponse2004[userId=$userId]';
@@ -52,44 +51,36 @@ class InlineResponse2004 {
     return null;
   }
 
-  static List<InlineResponse2004> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json
-              .map(InlineResponse2004.fromJson)
-              .toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <InlineResponse2004>[];
+  static List<InlineResponse2004> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(InlineResponse2004.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <InlineResponse2004>[];
 
   static Map<String, InlineResponse2004> mapFromJson(dynamic json) {
     final map = <String, InlineResponse2004>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) =>
-          map[key] = InlineResponse2004.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = InlineResponse2004.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of InlineResponse2004-objects as value to a dart map
-  static Map<String, List<InlineResponse2004>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<InlineResponse2004>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<InlineResponse2004>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = InlineResponse2004.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = InlineResponse2004.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

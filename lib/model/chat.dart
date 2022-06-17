@@ -34,36 +34,33 @@ class Chat {
   DateTime createdAt;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Chat &&
-          other.id == id &&
-          other.chatCode == chatCode &&
-          other.user == user &&
-          other.lastMessage == lastMessage &&
-          other.updatedAt == updatedAt &&
-          other.createdAt == createdAt;
+  bool operator ==(Object other) => identical(this, other) || other is Chat &&
+     other.id == id &&
+     other.chatCode == chatCode &&
+     other.user == user &&
+     other.lastMessage == lastMessage &&
+     other.updatedAt == updatedAt &&
+     other.createdAt == createdAt;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (id == null ? 0 : id.hashCode) +
-      (chatCode == null ? 0 : chatCode.hashCode) +
-      (user == null ? 0 : user.hashCode) +
-      (lastMessage == null ? 0 : lastMessage.hashCode) +
-      (updatedAt == null ? 0 : updatedAt.hashCode) +
-      (createdAt == null ? 0 : createdAt.hashCode);
+  // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id.hashCode) +
+    (chatCode == null ? 0 : chatCode.hashCode) +
+    (user == null ? 0 : user.hashCode) +
+    (lastMessage == null ? 0 : lastMessage.hashCode) +
+    (updatedAt == null ? 0 : updatedAt.hashCode) +
+    (createdAt == null ? 0 : createdAt.hashCode);
 
   @override
-  String toString() =>
-      'Chat[id=$id, chatCode=$chatCode, user=$user, lastMessage=$lastMessage, updatedAt=$updatedAt, createdAt=$createdAt]';
+  String toString() => 'Chat[id=$id, chatCode=$chatCode, user=$user, lastMessage=$lastMessage, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
     if (id != null) {
       json[r'id'] = id;
     }
-    json[r'chat_code'] = chatCode;
+      json[r'chat_code'] = chatCode;
     if (user != null) {
       json[r'user'] = user;
     }
@@ -97,43 +94,36 @@ class Chat {
     return null;
   }
 
-  static List<Chat> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(Chat.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <Chat>[];
+  static List<Chat> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(Chat.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <Chat>[];
 
   static Map<String, Chat> mapFromJson(dynamic json) {
     final map = <String, Chat>{};
     if (json is Map && json.isNotEmpty) {
       json
-          .cast<String, dynamic>()
-          .forEach((key, dynamic value) => map[key] = Chat.fromJson(value));
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = Chat.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of Chat-objects as value to a dart map
-  static Map<String, List<Chat>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<Chat>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Chat>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = Chat.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = Chat.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

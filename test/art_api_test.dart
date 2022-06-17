@@ -8,8 +8,9 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 import 'package:test/test.dart';
+
 
 /// tests for ArtApi
 void main() {
@@ -50,5 +51,11 @@ void main() {
     test('test artGalleryRead', () async {
       // TODO
     });
+
+    //Future<SearchResult> artSearchList({ String query }) async
+    test('test artSearchList', () async {
+      // TODO
+    });
+
   });
 }

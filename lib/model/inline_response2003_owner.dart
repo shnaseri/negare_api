@@ -25,23 +25,20 @@ class InlineResponse2003Owner {
   String fullName;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is InlineResponse2003Owner &&
-          other.id == id &&
-          other.profilePhoto == profilePhoto &&
-          other.fullName == fullName;
+  bool operator ==(Object other) => identical(this, other) || other is InlineResponse2003Owner &&
+     other.id == id &&
+     other.profilePhoto == profilePhoto &&
+     other.fullName == fullName;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (id == null ? 0 : id.hashCode) +
-      (profilePhoto == null ? 0 : profilePhoto.hashCode) +
-      (fullName == null ? 0 : fullName.hashCode);
+  // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id.hashCode) +
+    (profilePhoto == null ? 0 : profilePhoto.hashCode) +
+    (fullName == null ? 0 : fullName.hashCode);
 
   @override
-  String toString() =>
-      'InlineResponse2003Owner[id=$id, profilePhoto=$profilePhoto, fullName=$fullName]';
+  String toString() => 'InlineResponse2003Owner[id=$id, profilePhoto=$profilePhoto, fullName=$fullName]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -72,44 +69,36 @@ class InlineResponse2003Owner {
     return null;
   }
 
-  static List<InlineResponse2003Owner> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json
-              .map(InlineResponse2003Owner.fromJson)
-              .toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <InlineResponse2003Owner>[];
+  static List<InlineResponse2003Owner> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(InlineResponse2003Owner.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <InlineResponse2003Owner>[];
 
   static Map<String, InlineResponse2003Owner> mapFromJson(dynamic json) {
     final map = <String, InlineResponse2003Owner>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) =>
-          map[key] = InlineResponse2003Owner.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = InlineResponse2003Owner.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of InlineResponse2003Owner-objects as value to a dart map
-  static Map<String, List<InlineResponse2003Owner>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<InlineResponse2003Owner>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<InlineResponse2003Owner>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = InlineResponse2003Owner.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = InlineResponse2003Owner.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

@@ -1,28 +1,26 @@
-# honar_api_v11.api.ChatApi
+# honar_api_v12.api.ChatApi
 
 ## Load the API package
-
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 ```
 
 All URIs are relative to *http://188.121.110.151:8000/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chatGetAllChatMessagesList**](ChatApi.md#chatgetallchatmessageslist) | **
-GET** /chat/get-all-chat-messages/ |
-[**chatGetAllChatsList**](ChatApi.md#chatgetallchatslist) | **GET** /chat/get-all-chats/ |
+[**chatGetAllChatMessagesList**](ChatApi.md#chatgetallchatmessageslist) | **GET** /chat/get-all-chat-messages/ | 
+[**chatGetAllChatsList**](ChatApi.md#chatgetallchatslist) | **GET** /chat/get-all-chats/ | 
+
 
 # **chatGetAllChatMessagesList**
-
 > List<Message> chatGetAllChatMessagesList(chatCode)
 
+
+
 ### Example
-
 ```dart
-import 'package:honar_api_v11/api.dart';
-
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -32,12 +30,10 @@ final api_instance = ChatApi();
 final chatCode = chatCode_example; // String | 
 
 try {
-final result = api_instance.chatGetAllChatMessagesList(chatCode);
-print(result);
-} catch
-(
-e) {
-print('Exception when calling ChatApi->chatGetAllChatMessagesList: $e\n');
+    final result = api_instance.chatGetAllChatMessagesList(chatCode);
+    print(result);
+} catch (e) {
+    print('Exception when calling ChatApi->chatGetAllChatMessagesList: $e\n');
 }
 ```
 
@@ -45,7 +41,7 @@ print('Exception when calling ChatApi->chatGetAllChatMessagesList: $e\n');
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**chatCode** | **String**|  |
+ **chatCode** | **String**|  | 
 
 ### Return type
 
@@ -57,8 +53,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -69,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -98,8 +94,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -10,6 +10,7 @@
 
 part of openapi.api;
 
+
 class CoreApi {
   CoreApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
@@ -19,12 +20,10 @@ class CoreApi {
   /// Parameters:
   ///
   /// * [MultipartFile] file (required):
-  Future<Response> coreContentUpdateWithHttpInfo(
-    MultipartFile file,
-  ) async {
+  Future<Response> coreContentUpdateWithHttpInfo(MultipartFile file,) async {
     // Verify required params are set.
     if (file == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: file');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: file');
     }
 
     // ignore: prefer_const_declarations
@@ -66,12 +65,8 @@ class CoreApi {
   /// Parameters:
   ///
   /// * [MultipartFile] file (required):
-  Future<InlineResponse2006> coreContentUpdate(
-    MultipartFile file,
-  ) async {
-    final response = await coreContentUpdateWithHttpInfo(
-      file,
-    );
+  Future<InlineResponse2006> coreContentUpdate(MultipartFile file,) async {
+    final response = await coreContentUpdateWithHttpInfo(file,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -79,10 +74,8 @@ class CoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(
-        await _decodeBodyBytes(response),
-        'InlineResponse2006',
-      ) as InlineResponse2006;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2006',) as InlineResponse2006;
+    
     }
     return Future<InlineResponse2006>.value();
   }
@@ -91,12 +84,10 @@ class CoreApi {
   /// Parameters:
   ///
   /// * [ImageSerializer] data (required):
-  Future<Response> coreImageUploadCreateWithHttpInfo(
-    ImageSerializer data,
-  ) async {
+  Future<Response> coreImageUploadCreateWithHttpInfo(ImageSerializer data,) async {
     // Verify required params are set.
     if (data == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
     }
 
     // ignore: prefer_const_declarations
@@ -111,6 +102,7 @@ class CoreApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
+
 
     return apiClient.invokeAPI(
       path,
@@ -127,12 +119,8 @@ class CoreApi {
   /// Parameters:
   ///
   /// * [ImageSerializer] data (required):
-  Future<ImageSerializer> coreImageUploadCreate(
-    ImageSerializer data,
-  ) async {
-    final response = await coreImageUploadCreateWithHttpInfo(
-      data,
-    );
+  Future<ImageSerializer> coreImageUploadCreate(ImageSerializer data,) async {
+    final response = await coreImageUploadCreateWithHttpInfo(data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -140,10 +128,8 @@ class CoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(
-        await _decodeBodyBytes(response),
-        'ImageSerializer',
-      ) as ImageSerializer;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
+    
     }
     return Future<ImageSerializer>.value();
   }
@@ -153,16 +139,15 @@ class CoreApi {
   ///
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
-  Future<Response> coreImageUploadDeleteWithHttpInfo(
-    int id,
-  ) async {
+  Future<Response> coreImageUploadDeleteWithHttpInfo(int id,) async {
     // Verify required params are set.
     if (id == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
     // ignore: prefer_const_declarations
-    final path = r'/core/image/upload/{id}/'.replaceAll('{id}', id.toString());
+    final path = r'/core/image/upload/{id}/'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
     Object postBody;
@@ -173,6 +158,7 @@ class CoreApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
+
 
     return apiClient.invokeAPI(
       path,
@@ -190,12 +176,8 @@ class CoreApi {
   ///
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
-  Future<void> coreImageUploadDelete(
-    int id,
-  ) async {
-    final response = await coreImageUploadDeleteWithHttpInfo(
-      id,
-    );
+  Future<void> coreImageUploadDelete(int id,) async {
+    final response = await coreImageUploadDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -217,6 +199,7 @@ class CoreApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
+
 
     return apiClient.invokeAPI(
       path,
@@ -241,10 +224,10 @@ class CoreApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(
-              responseBody, 'List<ImageSerializer>') as List)
-          .cast<ImageSerializer>()
-          .toList(growable: false);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ImageSerializer>') as List)
+        .cast<ImageSerializer>()
+        .toList(growable: false);
+
     }
     return Future<List<ImageSerializer>>.value();
   }
@@ -256,20 +239,18 @@ class CoreApi {
   ///   A unique integer value identifying this image.
   ///
   /// * [ImageSerializer] data (required):
-  Future<Response> coreImageUploadPartialUpdateWithHttpInfo(
-    int id,
-    ImageSerializer data,
-  ) async {
+  Future<Response> coreImageUploadPartialUpdateWithHttpInfo(int id, ImageSerializer data,) async {
     // Verify required params are set.
     if (id == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
     if (data == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
     }
 
     // ignore: prefer_const_declarations
-    final path = r'/core/image/upload/{id}/'.replaceAll('{id}', id.toString());
+    final path = r'/core/image/upload/{id}/'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
     Object postBody = data;
@@ -280,6 +261,7 @@ class CoreApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
+
 
     return apiClient.invokeAPI(
       path,
@@ -299,14 +281,8 @@ class CoreApi {
   ///   A unique integer value identifying this image.
   ///
   /// * [ImageSerializer] data (required):
-  Future<ImageSerializer> coreImageUploadPartialUpdate(
-    int id,
-    ImageSerializer data,
-  ) async {
-    final response = await coreImageUploadPartialUpdateWithHttpInfo(
-      id,
-      data,
-    );
+  Future<ImageSerializer> coreImageUploadPartialUpdate(int id, ImageSerializer data,) async {
+    final response = await coreImageUploadPartialUpdateWithHttpInfo(id, data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -314,10 +290,8 @@ class CoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(
-        await _decodeBodyBytes(response),
-        'ImageSerializer',
-      ) as ImageSerializer;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
+    
     }
     return Future<ImageSerializer>.value();
   }
@@ -327,16 +301,15 @@ class CoreApi {
   ///
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
-  Future<Response> coreImageUploadReadWithHttpInfo(
-    int id,
-  ) async {
+  Future<Response> coreImageUploadReadWithHttpInfo(int id,) async {
     // Verify required params are set.
     if (id == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
     // ignore: prefer_const_declarations
-    final path = r'/core/image/upload/{id}/'.replaceAll('{id}', id.toString());
+    final path = r'/core/image/upload/{id}/'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
     Object postBody;
@@ -347,6 +320,7 @@ class CoreApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
+
 
     return apiClient.invokeAPI(
       path,
@@ -364,12 +338,8 @@ class CoreApi {
   ///
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
-  Future<ImageSerializer> coreImageUploadRead(
-    int id,
-  ) async {
-    final response = await coreImageUploadReadWithHttpInfo(
-      id,
-    );
+  Future<ImageSerializer> coreImageUploadRead(int id,) async {
+    final response = await coreImageUploadReadWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -377,10 +347,8 @@ class CoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(
-        await _decodeBodyBytes(response),
-        'ImageSerializer',
-      ) as ImageSerializer;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
+    
     }
     return Future<ImageSerializer>.value();
   }
@@ -392,20 +360,18 @@ class CoreApi {
   ///   A unique integer value identifying this image.
   ///
   /// * [ImageSerializer] data (required):
-  Future<Response> coreImageUploadUpdateWithHttpInfo(
-    int id,
-    ImageSerializer data,
-  ) async {
+  Future<Response> coreImageUploadUpdateWithHttpInfo(int id, ImageSerializer data,) async {
     // Verify required params are set.
     if (id == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
     if (data == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
     }
 
     // ignore: prefer_const_declarations
-    final path = r'/core/image/upload/{id}/'.replaceAll('{id}', id.toString());
+    final path = r'/core/image/upload/{id}/'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
     Object postBody = data;
@@ -416,6 +382,7 @@ class CoreApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
+
 
     return apiClient.invokeAPI(
       path,
@@ -435,14 +402,8 @@ class CoreApi {
   ///   A unique integer value identifying this image.
   ///
   /// * [ImageSerializer] data (required):
-  Future<ImageSerializer> coreImageUploadUpdate(
-    int id,
-    ImageSerializer data,
-  ) async {
-    final response = await coreImageUploadUpdateWithHttpInfo(
-      id,
-      data,
-    );
+  Future<ImageSerializer> coreImageUploadUpdate(int id, ImageSerializer data,) async {
+    final response = await coreImageUploadUpdateWithHttpInfo(id, data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -450,10 +411,8 @@ class CoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(
-        await _decodeBodyBytes(response),
-        'ImageSerializer',
-      ) as ImageSerializer;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
+    
     }
     return Future<ImageSerializer>.value();
   }

@@ -22,17 +22,15 @@ class InlineResponse406 {
   String error;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is InlineResponse406 &&
-          other.success == success &&
-          other.error == error;
+  bool operator ==(Object other) => identical(this, other) || other is InlineResponse406 &&
+     other.success == success &&
+     other.error == error;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (success == null ? 0 : success.hashCode) +
-      (error == null ? 0 : error.hashCode);
+  // ignore: unnecessary_parenthesis
+    (success == null ? 0 : success.hashCode) +
+    (error == null ? 0 : error.hashCode);
 
   @override
   String toString() => 'InlineResponse406[success=$success, error=$error]';
@@ -62,44 +60,36 @@ class InlineResponse406 {
     return null;
   }
 
-  static List<InlineResponse406> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json
-              .map(InlineResponse406.fromJson)
-              .toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <InlineResponse406>[];
+  static List<InlineResponse406> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(InlineResponse406.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <InlineResponse406>[];
 
   static Map<String, InlineResponse406> mapFromJson(dynamic json) {
     final map = <String, InlineResponse406>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach(
-          (key, dynamic value) => map[key] = InlineResponse406.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = InlineResponse406.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of InlineResponse406-objects as value to a dart map
-  static Map<String, List<InlineResponse406>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<InlineResponse406>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<InlineResponse406>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = InlineResponse406.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = InlineResponse406.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

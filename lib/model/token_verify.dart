@@ -19,20 +19,20 @@ class TokenVerify {
   String token;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is TokenVerify && other.token == token;
+  bool operator ==(Object other) => identical(this, other) || other is TokenVerify &&
+     other.token == token;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (token == null ? 0 : token.hashCode);
+  // ignore: unnecessary_parenthesis
+    (token == null ? 0 : token.hashCode);
 
   @override
   String toString() => 'TokenVerify[token=$token]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    json[r'token'] = token;
+      json[r'token'] = token;
     return json;
   }
 
@@ -49,42 +49,36 @@ class TokenVerify {
     return null;
   }
 
-  static List<TokenVerify> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(TokenVerify.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <TokenVerify>[];
+  static List<TokenVerify> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(TokenVerify.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <TokenVerify>[];
 
   static Map<String, TokenVerify> mapFromJson(dynamic json) {
     final map = <String, TokenVerify>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach(
-          (key, dynamic value) => map[key] = TokenVerify.fromJson(value));
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = TokenVerify.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of TokenVerify-objects as value to a dart map
-  static Map<String, List<TokenVerify>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<TokenVerify>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<TokenVerify>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = TokenVerify.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = TokenVerify.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

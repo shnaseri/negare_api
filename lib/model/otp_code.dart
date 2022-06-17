@@ -19,20 +19,20 @@ class OtpCode {
   String otpCode;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is OtpCode && other.otpCode == otpCode;
+  bool operator ==(Object other) => identical(this, other) || other is OtpCode &&
+     other.otpCode == otpCode;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (otpCode == null ? 0 : otpCode.hashCode);
+  // ignore: unnecessary_parenthesis
+    (otpCode == null ? 0 : otpCode.hashCode);
 
   @override
   String toString() => 'OtpCode[otpCode=$otpCode]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    json[r'otp_code'] = otpCode;
+      json[r'otp_code'] = otpCode;
     return json;
   }
 
@@ -49,43 +49,36 @@ class OtpCode {
     return null;
   }
 
-  static List<OtpCode> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(OtpCode.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <OtpCode>[];
+  static List<OtpCode> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(OtpCode.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <OtpCode>[];
 
   static Map<String, OtpCode> mapFromJson(dynamic json) {
     final map = <String, OtpCode>{};
     if (json is Map && json.isNotEmpty) {
       json
-          .cast<String, dynamic>()
-          .forEach((key, dynamic value) => map[key] = OtpCode.fromJson(value));
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = OtpCode.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of OtpCode-objects as value to a dart map
-  static Map<String, List<OtpCode>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<OtpCode>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<OtpCode>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = OtpCode.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = OtpCode.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+

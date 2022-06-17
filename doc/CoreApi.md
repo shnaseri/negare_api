@@ -1,34 +1,31 @@
-# honar_api_v11.api.CoreApi
+# honar_api_v12.api.CoreApi
 
 ## Load the API package
-
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 ```
 
 All URIs are relative to *http://188.121.110.151:8000/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**coreContentUpdate**](CoreApi.md#corecontentupdate) | **PUT** /core/content/ |
-[**coreImageUploadCreate**](CoreApi.md#coreimageuploadcreate) | **POST** /core/image/upload/ |
-[**coreImageUploadDelete**](CoreApi.md#coreimageuploaddelete) | **
-DELETE** /core/image/upload/{id}/ |
-[**coreImageUploadList**](CoreApi.md#coreimageuploadlist) | **GET** /core/image/upload/ |
-[**coreImageUploadPartialUpdate**](CoreApi.md#coreimageuploadpartialupdate) | **
-PATCH** /core/image/upload/{id}/ |
-[**coreImageUploadRead**](CoreApi.md#coreimageuploadread) | **GET** /core/image/upload/{id}/ |
-[**coreImageUploadUpdate**](CoreApi.md#coreimageuploadupdate) | **PUT** /core/image/upload/{id}/ |
+[**coreContentUpdate**](CoreApi.md#corecontentupdate) | **PUT** /core/content/ | 
+[**coreImageUploadCreate**](CoreApi.md#coreimageuploadcreate) | **POST** /core/image/upload/ | 
+[**coreImageUploadDelete**](CoreApi.md#coreimageuploaddelete) | **DELETE** /core/image/upload/{id}/ | 
+[**coreImageUploadList**](CoreApi.md#coreimageuploadlist) | **GET** /core/image/upload/ | 
+[**coreImageUploadPartialUpdate**](CoreApi.md#coreimageuploadpartialupdate) | **PATCH** /core/image/upload/{id}/ | 
+[**coreImageUploadRead**](CoreApi.md#coreimageuploadread) | **GET** /core/image/upload/{id}/ | 
+[**coreImageUploadUpdate**](CoreApi.md#coreimageuploadupdate) | **PUT** /core/image/upload/{id}/ | 
+
 
 # **coreContentUpdate**
-
 > InlineResponse2006 coreContentUpdate(file)
 
+
+
 ### Example
-
 ```dart
-import 'package:honar_api_v11/api.dart';
-
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -38,12 +35,10 @@ final api_instance = CoreApi();
 final file = BINARY_DATA_HERE; // MultipartFile | 
 
 try {
-final result = api_instance.coreContentUpdate(file);
-print(result);
-} catch
-(
-e) {
-print('Exception when calling CoreApi->coreContentUpdate: $e\n');
+    final result = api_instance.coreContentUpdate(file);
+    print(result);
+} catch (e) {
+    print('Exception when calling CoreApi->coreContentUpdate: $e\n');
 }
 ```
 
@@ -51,7 +46,7 @@ print('Exception when calling CoreApi->coreContentUpdate: $e\n');
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**file** | **MultipartFile**|  |
+ **file** | **MultipartFile**|  | 
 
 ### Return type
 
@@ -63,8 +58,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -75,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -96,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**data** | [**ImageSerializer**](ImageSerializer.md)|  |
+ **data** | [**ImageSerializer**](ImageSerializer.md)|  | 
 
 ### Return type
 
@@ -108,8 +103,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -120,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -140,7 +135,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **int**| A unique integer value identifying this image. |
+ **id** | **int**| A unique integer value identifying this image. | 
 
 ### Return type
 
@@ -152,8 +147,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -166,7 +161,7 @@ Examines request and allows certain fields to be expanded within the list view.
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -195,8 +190,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -207,7 +202,7 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -229,8 +224,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **int**| A unique integer value identifying this image. |
-**data** | [**ImageSerializer**](ImageSerializer.md)|  |
+ **id** | **int**| A unique integer value identifying this image. | 
+ **data** | [**ImageSerializer**](ImageSerializer.md)|  | 
 
 ### Return type
 
@@ -242,8 +237,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -254,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -275,7 +270,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **int**| A unique integer value identifying this image. |
+ **id** | **int**| A unique integer value identifying this image. | 
 
 ### Return type
 
@@ -287,8 +282,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -299,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -321,8 +316,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **int**| A unique integer value identifying this image. |
-**data** | [**ImageSerializer**](ImageSerializer.md)|  |
+ **id** | **int**| A unique integer value identifying this image. | 
+ **data** | [**ImageSerializer**](ImageSerializer.md)|  | 
 
 ### Return type
 
@@ -334,8 +329,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

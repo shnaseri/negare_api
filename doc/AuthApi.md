@@ -1,33 +1,31 @@
-# honar_api_v11.api.AuthApi
+# honar_api_v12.api.AuthApi
 
 ## Load the API package
-
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 ```
 
 All URIs are relative to *http://188.121.110.151:8000/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authLoginCreate**](AuthApi.md#authlogincreate) | **POST** /auth/login/ |
-[**authLogoutCreate**](AuthApi.md#authlogoutcreate) | **POST** /auth/logout/ |
-[**authMeList**](AuthApi.md#authmelist) | **GET** /auth/me/ |
-[**authRegisterCreate**](AuthApi.md#authregistercreate) | **POST** /auth/register/ |
-[**authSendOtpCodeCreate**](AuthApi.md#authsendotpcodecreate) | **POST** /auth/send-otp-code/{id}/ |
-[**authVerifyCreate**](AuthApi.md#authverifycreate) | **POST** /auth/verify/ |
-[**authVerifyOtpCodeCreate**](AuthApi.md#authverifyotpcodecreate) | **
-POST** /auth/verify-otp-code/{id}/ |
+[**authLoginCreate**](AuthApi.md#authlogincreate) | **POST** /auth/login/ | 
+[**authLogoutCreate**](AuthApi.md#authlogoutcreate) | **POST** /auth/logout/ | 
+[**authMeList**](AuthApi.md#authmelist) | **GET** /auth/me/ | 
+[**authRegisterCreate**](AuthApi.md#authregistercreate) | **POST** /auth/register/ | 
+[**authSendOtpCodeCreate**](AuthApi.md#authsendotpcodecreate) | **POST** /auth/send-otp-code/{id}/ | 
+[**authVerifyCreate**](AuthApi.md#authverifycreate) | **POST** /auth/verify/ | 
+[**authVerifyOtpCodeCreate**](AuthApi.md#authverifyotpcodecreate) | **POST** /auth/verify-otp-code/{id}/ | 
+
 
 # **authLoginCreate**
-
 > AccessRefresh authLoginCreate(data)
 
+
+
 ### Example
-
 ```dart
-import 'package:honar_api_v11/api.dart';
-
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -37,12 +35,10 @@ final api_instance = AuthApi();
 final data = TokenObtainPair(); // TokenObtainPair | 
 
 try {
-final result = api_instance.authLoginCreate(data);
-print(result);
-} catch
-(
-e) {
-print('Exception when calling AuthApi->authLoginCreate: $e\n');
+    final result = api_instance.authLoginCreate(data);
+    print(result);
+} catch (e) {
+    print('Exception when calling AuthApi->authLoginCreate: $e\n');
 }
 ```
 
@@ -50,7 +46,7 @@ print('Exception when calling AuthApi->authLoginCreate: $e\n');
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**data** | [**TokenObtainPair**](TokenObtainPair.md)|  |
+ **data** | [**TokenObtainPair**](TokenObtainPair.md)|  | 
 
 ### Return type
 
@@ -62,8 +58,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -72,12 +68,11 @@ Name | Type | Description  | Notes
 
 
 
-Takes a refresh type JSON web token and returns an access type JSON web token if the refresh token
-is valid.
+Takes a refresh type JSON web token and returns an access type JSON web token if the refresh token is valid.
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -98,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**data** | [**TokenRefresh**](TokenRefresh.md)|  |
+ **data** | [**TokenRefresh**](TokenRefresh.md)|  | 
 
 ### Return type
 
@@ -110,19 +105,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authMeList**
-
 > InlineResponse2004 authMeList()
 
-### Example
 
+
+### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -139,7 +134,6 @@ try {
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -152,19 +146,19 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authRegisterCreate**
-
 > UserId authRegisterCreate(data)
 
-### Example
 
+
+### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -185,7 +179,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**data** | [**Register**](Register.md)|  |
+ **data** | [**Register**](Register.md)|  | 
 
 ### Return type
 
@@ -197,8 +191,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -209,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -230,7 +224,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **String**|  |
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -242,8 +236,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -252,12 +246,11 @@ Name | Type | Description  | Notes
 
 
 
-Takes a token and indicates if it is valid. This view provides no information about a token's
-fitness for a particular use.
+Takes a token and indicates if it is valid.  This view provides no information about a token's fitness for a particular use.
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -278,7 +271,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**data** | [**TokenVerify**](TokenVerify.md)|  |
+ **data** | [**TokenVerify**](TokenVerify.md)|  | 
 
 ### Return type
 
@@ -290,20 +283,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authVerifyOtpCodeCreate**
-
 > InlineResponse2005 authVerifyOtpCodeCreate(id, data)
 
 
 
 ### Example
 ```dart
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -325,8 +317,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **String**|  |
-**data** | [**OtpCode**](OtpCode.md)|  |
+ **id** | **String**|  | 
+ **data** | [**OtpCode**](OtpCode.md)|  | 
 
 ### Return type
 
@@ -338,8 +330,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

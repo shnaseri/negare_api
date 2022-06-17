@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v11/api.dart';
+import 'package:honar_api_v12/api.dart';
 import 'package:test/test.dart';
 
 // tests for ArtPiece
@@ -46,12 +46,17 @@ void main() {
       // TODO
     });
 
+    // List<ImageSerializer> images (default value: const [])
+    test('to test the property `images`', () async {
+      // TODO
+    });
+
     // User owner
     test('to test the property `owner`', () async {
       // TODO
     });
 
-    // String likeCount
+    // int likeCount
     test('to test the property `likeCount`', () async {
       // TODO
     });
@@ -61,7 +66,7 @@ void main() {
       // TODO
     });
 
-    // String isUserLiked
+    // bool isUserLiked
     test('to test the property `isUserLiked`', () async {
       // TODO
     });
@@ -70,5 +75,18 @@ void main() {
     test('to test the property `url`', () async {
       // TODO
     });
+
+    // DateTime createdAt
+    test('to test the property `createdAt`', () async {
+      // TODO
+    });
+
+    // DateTime updatedAt
+    test('to test the property `updatedAt`', () async {
+      // TODO
+    });
+
+
   });
+
 }

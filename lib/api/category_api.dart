@@ -10,9 +10,9 @@
 
 part of openapi.api;
 
+
 class CategoryApi {
-  CategoryApi([ApiClient apiClient])
-      : apiClient = apiClient ?? defaultApiClient;
+  CategoryApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -30,6 +30,7 @@ class CategoryApi {
 
     const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
+
 
     return apiClient.invokeAPI(
       path,
@@ -53,10 +54,10 @@ class CategoryApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Category>')
-              as List)
-          .cast<Category>()
-          .toList(growable: false);
+      return (await apiClient.deserializeAsync(responseBody, 'List<Category>') as List)
+        .cast<Category>()
+        .toList(growable: false);
+
     }
     return Future<List<Category>>.value();
   }

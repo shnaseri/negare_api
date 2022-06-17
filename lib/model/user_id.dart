@@ -19,13 +19,13 @@ class UserId {
   int id;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is UserId && other.id == id;
+  bool operator ==(Object other) => identical(this, other) || other is UserId &&
+     other.id == id;
 
   @override
   int get hashCode =>
-      // ignore: unnecessary_parenthesis
-      (id == null ? 0 : id.hashCode);
+  // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id.hashCode);
 
   @override
   String toString() => 'UserId[id=$id]';
@@ -51,43 +51,36 @@ class UserId {
     return null;
   }
 
-  static List<UserId> listFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) =>
-      json is List && json.isNotEmpty
-          ? json.map(UserId.fromJson).toList(growable: true == growable)
-          : true == emptyIsNull
-              ? null
-              : <UserId>[];
+  static List<UserId> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
+    json is List && json.isNotEmpty
+      ? json.map(UserId.fromJson).toList(growable: true == growable)
+      : true == emptyIsNull ? null : <UserId>[];
 
   static Map<String, UserId> mapFromJson(dynamic json) {
     final map = <String, UserId>{};
     if (json is Map && json.isNotEmpty) {
       json
-          .cast<String, dynamic>()
-          .forEach((key, dynamic value) => map[key] = UserId.fromJson(value));
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = UserId.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of UserId-objects as value to a dart map
-  static Map<String, List<UserId>> mapListFromJson(
-    dynamic json, {
-    bool emptyIsNull,
-    bool growable,
-  }) {
+  static Map<String, List<UserId>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<UserId>>{};
     if (json is Map && json.isNotEmpty) {
-      json.cast<String, dynamic>().forEach((key, dynamic value) {
-        map[key] = UserId.listFromJson(
-          value,
-          emptyIsNull: emptyIsNull,
-          growable: growable,
-        );
-      });
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = UserId.listFromJson(
+            value,
+            emptyIsNull: emptyIsNull,
+            growable: growable,
+          );
+        });
     }
     return map;
   }
 }
+
