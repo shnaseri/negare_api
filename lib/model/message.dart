@@ -25,7 +25,7 @@ class Message {
 
   String type;
 
-  String isUserSender;
+  bool isUserSender;
 
   String content;
 
@@ -87,7 +87,7 @@ class Message {
       return Message(
         id: mapValueOfType<int>(json, r'id'),
         type: mapValueOfType<String>(json, r'type'),
-        isUserSender: mapValueOfType<String>(json, r'is_user_sender'),
+        isUserSender: mapValueOfType<bool>(json, r'is_user_sender'),
         content: mapValueOfType<String>(json, r'content'),
         updatedAt: mapDateTime(json, r'updated_at', ''),
         createdAt: mapDateTime(json, r'created_at', ''),

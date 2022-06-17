@@ -65,7 +65,7 @@ class CoreApi {
   /// Parameters:
   ///
   /// * [MultipartFile] file (required):
-  Future<InlineResponse2006> coreContentUpdate(MultipartFile file,) async {
+  Future<InlineResponse2007> coreContentUpdate(MultipartFile file,) async {
     final response = await coreContentUpdateWithHttpInfo(file,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -74,10 +74,10 @@ class CoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2006',) as InlineResponse2006;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2007',) as InlineResponse2007;
     
     }
-    return Future<InlineResponse2006>.value();
+    return Future<InlineResponse2007>.value();
   }
 
   /// Performs an HTTP 'POST /core/image/upload/' operation and returns the [Response].

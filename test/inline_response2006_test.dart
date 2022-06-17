@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v12/api.dart';
+import 'package:honar_api_v13/api.dart';
 import 'package:test/test.dart';
 
 // tests for InlineResponse2006
@@ -16,13 +16,33 @@ void main() {
   final instance = InlineResponse2006();
 
   group('test InlineResponse2006', () {
-    // bool success (default value: true)
-    test('to test the property `success`', () async {
+    // int id
+    test('to test the property `id`', () async {
       // TODO
     });
 
-    // int contentId
-    test('to test the property `contentId`', () async {
+    // String chatCode
+    test('to test the property `chatCode`', () async {
+      // TODO
+    });
+
+    // ChatGetAllChatsUser user
+    test('to test the property `user`', () async {
+      // TODO
+    });
+
+    // String lastMessage
+    test('to test the property `lastMessage`', () async {
+      // TODO
+    });
+
+    // String updatedAt
+    test('to test the property `updatedAt`', () async {
+      // TODO
+    });
+
+    // String createdAt
+    test('to test the property `createdAt`', () async {
       // TODO
     });
 

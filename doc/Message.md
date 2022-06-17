@@ -1,8 +1,8 @@
-# honar_api_v12.model.Message
+# honar_api_v13.model.Message
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v12/api.dart';
+import 'package:honar_api_v13/api.dart';
 ```
 
 ## Properties
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **type** | **String** |  | [optional] [readonly] 
-**isUserSender** | **String** |  | [optional] [readonly] 
+**isUserSender** | **bool** |  | [optional] [readonly] 
 **content** | **String** |  | [optional] [readonly] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [readonly] 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [readonly] 

@@ -103,7 +103,7 @@ class ChatApi {
     );
   }
 
-  Future<List<Chat>> chatGetAllChatsList() async {
+  Future<List<InlineResponse2006>> chatGetAllChatsList() async {
     final response = await chatGetAllChatsListWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -113,11 +113,11 @@ class ChatApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Chat>') as List)
-        .cast<Chat>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<InlineResponse2006>') as List)
+        .cast<InlineResponse2006>()
         .toList(growable: false);
 
     }
-    return Future<List<Chat>>.value();
+    return Future<List<InlineResponse2006>>.value();
   }
 }

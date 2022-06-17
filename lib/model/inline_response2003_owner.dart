@@ -18,7 +18,7 @@ class InlineResponse2003Owner {
     this.fullName,
   });
 
-  String id;
+  int id;
 
   String profilePhoto;
 
@@ -61,7 +61,7 @@ class InlineResponse2003Owner {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
       return InlineResponse2003Owner(
-        id: mapValueOfType<String>(json, r'id'),
+        id: mapValueOfType<int>(json, r'id'),
         profilePhoto: mapValueOfType<String>(json, r'profile_photo'),
         fullName: mapValueOfType<String>(json, r'full_name'),
       );

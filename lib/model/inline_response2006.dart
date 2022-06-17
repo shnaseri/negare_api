@@ -13,35 +13,67 @@ part of openapi.api;
 class InlineResponse2006 {
   /// Returns a new [InlineResponse2006] instance.
   InlineResponse2006({
-    this.success = true,
-    this.contentId,
+    this.id,
+    this.chatCode,
+    this.user,
+    this.lastMessage,
+    this.updatedAt,
+    this.createdAt,
   });
 
-  bool success;
+  int id;
 
-  int contentId;
+  String chatCode;
+
+  ChatGetAllChatsUser user;
+
+  String lastMessage;
+
+  String updatedAt;
+
+  String createdAt;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is InlineResponse2006 &&
-     other.success == success &&
-     other.contentId == contentId;
+     other.id == id &&
+     other.chatCode == chatCode &&
+     other.user == user &&
+     other.lastMessage == lastMessage &&
+     other.updatedAt == updatedAt &&
+     other.createdAt == createdAt;
 
   @override
   int get hashCode =>
   // ignore: unnecessary_parenthesis
-    (success == null ? 0 : success.hashCode) +
-    (contentId == null ? 0 : contentId.hashCode);
+    (id == null ? 0 : id.hashCode) +
+    (chatCode == null ? 0 : chatCode.hashCode) +
+    (user == null ? 0 : user.hashCode) +
+    (lastMessage == null ? 0 : lastMessage.hashCode) +
+    (updatedAt == null ? 0 : updatedAt.hashCode) +
+    (createdAt == null ? 0 : createdAt.hashCode);
 
   @override
-  String toString() => 'InlineResponse2006[success=$success, contentId=$contentId]';
+  String toString() => 'InlineResponse2006[id=$id, chatCode=$chatCode, user=$user, lastMessage=$lastMessage, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (success != null) {
-      json[r'success'] = success;
+    if (id != null) {
+      json[r'id'] = id;
     }
-    if (contentId != null) {
-      json[r'content_id'] = contentId;
+    if (chatCode != null) {
+      json[r'chat_code'] = chatCode;
+    }
+    if (user != null) {
+      json[r'user'] = user;
+    }
+    if (lastMessage != null) {
+      json[r'last_message'] = lastMessage;
+    }
+    if (updatedAt != null) {
+      json[r'updated_at'] = updatedAt;
+    }
+    if (createdAt != null) {
+      json[r'created_at'] = createdAt;
     }
     return json;
   }
@@ -53,8 +85,12 @@ class InlineResponse2006 {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
       return InlineResponse2006(
-        success: mapValueOfType<bool>(json, r'success'),
-        contentId: mapValueOfType<int>(json, r'content_id'),
+        id: mapValueOfType<int>(json, r'id'),
+        chatCode: mapValueOfType<String>(json, r'chat_code'),
+        user: ChatGetAllChatsUser.fromJson(json[r'user']),
+        lastMessage: mapValueOfType<String>(json, r'last_message'),
+        updatedAt: mapValueOfType<String>(json, r'updated_at'),
+        createdAt: mapValueOfType<String>(json, r'created_at'),
       );
     }
     return null;

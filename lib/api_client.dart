@@ -207,8 +207,8 @@ class ApiClient {
           return ArtPieceDetail.fromJson(value);
         case 'Category':
           return Category.fromJson(value);
-        case 'Chat':
-          return Chat.fromJson(value);
+        case 'ChatGetAllChatsUser':
+          return ChatGetAllChatsUser.fromJson(value);
         case 'FullUser':
           return FullUser.fromJson(value);
         case 'ImageSerializer':
@@ -231,6 +231,8 @@ class ApiClient {
           return InlineResponse2005.fromJson(value);
         case 'InlineResponse2006':
           return InlineResponse2006.fromJson(value);
+        case 'InlineResponse2007':
+          return InlineResponse2007.fromJson(value);
         case 'InlineResponse401':
           return InlineResponse401.fromJson(value);
         case 'InlineResponse403':

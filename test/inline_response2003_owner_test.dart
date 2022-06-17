@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v12/api.dart';
+import 'package:honar_api_v13/api.dart';
 import 'package:test/test.dart';
 
 // tests for InlineResponse2003Owner
@@ -16,7 +16,7 @@ void main() {
   final instance = InlineResponse2003Owner();
 
   group('test InlineResponse2003Owner', () {
-    // String id
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
