@@ -84,7 +84,7 @@ class InlineResponse2003Posts {
         title: mapValueOfType<String>(json, r'title'),
         type: mapValueOfType<String>(json, r'type'),
         image: mapValueOfType<String>(json, r'image'),
-        countLIKE: mapValueOfType<int>(json, r'count_LIKE'),
+        countLIKE: mapValueOfType<int>(json, r'count_like'),
       );
     }
     return null;
