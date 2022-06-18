@@ -1,8 +1,8 @@
-# honar_api_v13.model.InlineResponse2006
+# honar_api_v14.model.InlineResponse2006
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v13/api.dart';
+import 'package:honar_api_v14/api.dart';
 ```
 
 ## Properties
@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **chatCode** | **String** |  | [optional] 
 **user** | [**ChatGetAllChatsUser**](ChatGetAllChatsUser.md) |  | [optional] 
 **lastMessage** | **String** |  | [optional] 
-**updatedAt** | **String** |  | [optional] 
-**createdAt** | **String** |  | [optional] 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

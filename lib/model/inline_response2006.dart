@@ -29,9 +29,9 @@ class InlineResponse2006 {
 
   String lastMessage;
 
-  String updatedAt;
+  DateTime updatedAt;
 
-  String createdAt;
+  DateTime createdAt;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is InlineResponse2006 &&
@@ -70,10 +70,10 @@ class InlineResponse2006 {
       json[r'last_message'] = lastMessage;
     }
     if (updatedAt != null) {
-      json[r'updated_at'] = updatedAt;
+      json[r'updated_at'] = updatedAt.toUtc().toIso8601String();
     }
     if (createdAt != null) {
-      json[r'created_at'] = createdAt;
+      json[r'created_at'] = createdAt.toUtc().toIso8601String();
     }
     return json;
   }
@@ -89,8 +89,8 @@ class InlineResponse2006 {
         chatCode: mapValueOfType<String>(json, r'chat_code'),
         user: ChatGetAllChatsUser.fromJson(json[r'user']),
         lastMessage: mapValueOfType<String>(json, r'last_message'),
-        updatedAt: mapValueOfType<String>(json, r'updated_at'),
-        createdAt: mapValueOfType<String>(json, r'created_at'),
+        updatedAt: mapDateTime(json, r'updated_at', ''),
+        createdAt: mapDateTime(json, r'created_at', ''),
       );
     }
     return null;
