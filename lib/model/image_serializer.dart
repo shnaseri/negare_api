@@ -54,7 +54,7 @@ class ImageSerializer {
       final json = value.cast<String, dynamic>();
       return ImageSerializer(
         id: mapValueOfType<int>(json, r'id'),
-        image: mapValueOfType<String>(json, r'image'),
+        image: mapValueOfType<Map>(json, r'image')["full_size"],
       );
     }
     return null;
