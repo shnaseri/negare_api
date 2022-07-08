@@ -1,23 +1,23 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for CoreApi
 void main() {
-  final instance = CoreApi();
+  // final instance = CoreApi();
 
   group('tests for CoreApi', () {
-    //Future<InlineResponse2007> coreContentUpdate(MultipartFile file) async
+    //Future<CoreContentUpdate200Response> coreContentUpdate(MultipartFile file) async
     test('test coreContentUpdate', () async {
       // TODO
     });

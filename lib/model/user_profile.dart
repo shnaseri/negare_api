@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -23,21 +23,45 @@ class UserProfile {
     this.avatar,
   });
 
-  int id;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
-  int followingCount;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? followingCount;
 
-  int followersCount;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? followersCount;
 
-  UserProfileGenderEnum gender;
+  UserProfileGenderEnum? gender;
 
-  String phoneNumber;
+  String? phoneNumber;
 
-  String nationalCode;
+  String? nationalCode;
 
-  String birthdate;
+  String? birthdate;
 
-  ImageSerializer avatar;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  ImageSerializer? avatar;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserProfile &&
@@ -52,54 +76,66 @@ class UserProfile {
 
   @override
   int get hashCode =>
-  // ignore: unnecessary_parenthesis
-    (id == null ? 0 : id.hashCode) +
-    (followingCount == null ? 0 : followingCount.hashCode) +
-    (followersCount == null ? 0 : followersCount.hashCode) +
-    (gender == null ? 0 : gender.hashCode) +
-    (phoneNumber == null ? 0 : phoneNumber.hashCode) +
-    (nationalCode == null ? 0 : nationalCode.hashCode) +
-    (birthdate == null ? 0 : birthdate.hashCode) +
-    (avatar == null ? 0 : avatar.hashCode);
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (followingCount == null ? 0 : followingCount!.hashCode) +
+    (followersCount == null ? 0 : followersCount!.hashCode) +
+    (gender == null ? 0 : gender!.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
+    (nationalCode == null ? 0 : nationalCode!.hashCode) +
+    (birthdate == null ? 0 : birthdate!.hashCode) +
+    (avatar == null ? 0 : avatar!.hashCode);
 
   @override
   String toString() => 'UserProfile[id=$id, followingCount=$followingCount, followersCount=$followersCount, gender=$gender, phoneNumber=$phoneNumber, nationalCode=$nationalCode, birthdate=$birthdate, avatar=$avatar]';
 
   Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
+    final _json = <String, dynamic>{};
     if (id != null) {
-      json[r'id'] = id;
+      _json[r'id'] = id;
     }
     if (followingCount != null) {
-      json[r'following_count'] = followingCount;
+      _json[r'following_count'] = followingCount;
     }
     if (followersCount != null) {
-      json[r'followers_count'] = followersCount;
+      _json[r'followers_count'] = followersCount;
     }
     if (gender != null) {
-      json[r'gender'] = gender;
+      _json[r'gender'] = gender;
     }
     if (phoneNumber != null) {
-      json[r'phone_number'] = phoneNumber;
+      _json[r'phone_number'] = phoneNumber;
     }
     if (nationalCode != null) {
-      json[r'national_code'] = nationalCode;
+      _json[r'national_code'] = nationalCode;
     }
     if (birthdate != null) {
-      json[r'birthdate'] = birthdate;
+      _json[r'birthdate'] = birthdate;
     }
     if (avatar != null) {
-      json[r'avatar'] = avatar;
+      _json[r'avatar'] = avatar;
     }
-    return json;
+    return _json;
   }
 
   /// Returns a new [UserProfile] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static UserProfile fromJson(dynamic value) {
+  static UserProfile? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserProfile[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserProfile[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
       return UserProfile(
         id: mapValueOfType<int>(json, r'id'),
         followingCount: mapValueOfType<int>(json, r'following_count'),
@@ -114,37 +150,51 @@ class UserProfile {
     return null;
   }
 
-  static List<UserProfile> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
-    json is List && json.isNotEmpty
-      ? json.map(UserProfile.fromJson).toList(growable: true == growable)
-      : true == emptyIsNull ? null : <UserProfile>[];
+  static List<UserProfile>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UserProfile>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UserProfile.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, UserProfile> mapFromJson(dynamic json) {
     final map = <String, UserProfile>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = UserProfile.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserProfile.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UserProfile-objects as value to a dart map
-  static Map<String, List<UserProfile>> mapListFromJson(dynamic json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<UserProfile>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<UserProfile>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = UserProfile.listFromJson(
-            value,
-            emptyIsNull: emptyIsNull,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserProfile.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 
 
@@ -156,7 +206,7 @@ class UserProfileGenderEnum {
   final String value;
 
   @override
-  String toString() => value ?? '';
+  String toString() => value;
 
   String toJson() => value;
 
@@ -171,13 +221,20 @@ class UserProfileGenderEnum {
     N,
   ];
 
-  static UserProfileGenderEnum fromJson(dynamic value) =>
-    UserProfileGenderEnumTypeTransformer().decode(value);
+  static UserProfileGenderEnum? fromJson(dynamic value) => UserProfileGenderEnumTypeTransformer().decode(value);
 
-  static List<UserProfileGenderEnum> listFromJson(dynamic json, {bool emptyIsNull, bool growable,}) =>
-    json is List && json.isNotEmpty
-      ? json.map(UserProfileGenderEnum.fromJson).toList(growable: true == growable)
-      : true == emptyIsNull ? null : <UserProfileGenderEnum>[];
+  static List<UserProfileGenderEnum>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UserProfileGenderEnum>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UserProfileGenderEnum.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 }
 
 /// Transformation class that can [encode] an instance of [UserProfileGenderEnum] to String,
@@ -197,14 +254,14 @@ class UserProfileGenderEnumTypeTransformer {
   ///
   /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
   /// and users are still using an old app with the old code.
-  UserProfileGenderEnum decode(dynamic data, {bool allowNull}) {
+  UserProfileGenderEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data.toString()) {
         case r'M': return UserProfileGenderEnum.M;
         case r'F': return UserProfileGenderEnum.F;
         case r'N': return UserProfileGenderEnum.N;
         default:
-          if (allowNull == false) {
+          if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
           }
       }
@@ -213,7 +270,7 @@ class UserProfileGenderEnumTypeTransformer {
   }
 
   /// Singleton [UserProfileGenderEnumTypeTransformer] instance.
-  static UserProfileGenderEnumTypeTransformer _instance;
+  static UserProfileGenderEnumTypeTransformer? _instance;
 }
 
 

@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -12,7 +12,7 @@ part of openapi.api;
 
 
 class CoreApi {
-  CoreApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CoreApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -21,22 +21,16 @@ class CoreApi {
   ///
   /// * [MultipartFile] file (required):
   Future<Response> coreContentUpdateWithHttpInfo(MultipartFile file,) async {
-    // Verify required params are set.
-    if (file == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: file');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/core/content/';
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['multipart/form-data'];
 
     bool hasFields = false;
@@ -57,15 +51,14 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [MultipartFile] file (required):
-  Future<InlineResponse2007> coreContentUpdate(MultipartFile file,) async {
+  Future<CoreContentUpdate200Response?> coreContentUpdate(MultipartFile file,) async {
     final response = await coreContentUpdateWithHttpInfo(file,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -73,11 +66,11 @@ class CoreApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2007',) as InlineResponse2007;
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'CoreContentUpdate200Response',) as CoreContentUpdate200Response;
     
     }
-    return Future<InlineResponse2007>.value();
+    return null;
   }
 
   /// Performs an HTTP 'POST /core/image/upload/' operation and returns the [Response].
@@ -85,22 +78,16 @@ class CoreApi {
   ///
   /// * [ImageSerializer] data (required):
   Future<Response> coreImageUploadCreateWithHttpInfo(ImageSerializer data,) async {
-    // Verify required params are set.
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/core/image/upload/';
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -111,15 +98,14 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [ImageSerializer] data (required):
-  Future<ImageSerializer> coreImageUploadCreate(ImageSerializer data,) async {
+  Future<ImageSerializer?> coreImageUploadCreate(ImageSerializer data,) async {
     final response = await coreImageUploadCreateWithHttpInfo(data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -127,11 +113,11 @@ class CoreApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
     
     }
-    return Future<ImageSerializer>.value();
+    return null;
   }
 
   /// Performs an HTTP 'DELETE /core/image/upload/{id}/' operation and returns the [Response].
@@ -140,23 +126,17 @@ class CoreApi {
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
   Future<Response> coreImageUploadDeleteWithHttpInfo(int id,) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/core/image/upload/{id}/'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -167,8 +147,7 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -191,13 +170,12 @@ class CoreApi {
     final path = r'/core/image/upload/';
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -208,13 +186,12 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Examines request and allows certain fields to be expanded within the list view.
-  Future<List<ImageSerializer>> coreImageUploadList() async {
+  Future<List<ImageSerializer>?> coreImageUploadList() async {
     final response = await coreImageUploadListWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -222,14 +199,14 @@ class CoreApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
       return (await apiClient.deserializeAsync(responseBody, 'List<ImageSerializer>') as List)
         .cast<ImageSerializer>()
-        .toList(growable: false);
+        .toList();
 
     }
-    return Future<List<ImageSerializer>>.value();
+    return null;
   }
 
   /// Performs an HTTP 'PATCH /core/image/upload/{id}/' operation and returns the [Response].
@@ -240,26 +217,17 @@ class CoreApi {
   ///
   /// * [ImageSerializer] data (required):
   Future<Response> coreImageUploadPartialUpdateWithHttpInfo(int id, ImageSerializer data,) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/core/image/upload/{id}/'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -270,8 +238,7 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -281,7 +248,7 @@ class CoreApi {
   ///   A unique integer value identifying this image.
   ///
   /// * [ImageSerializer] data (required):
-  Future<ImageSerializer> coreImageUploadPartialUpdate(int id, ImageSerializer data,) async {
+  Future<ImageSerializer?> coreImageUploadPartialUpdate(int id, ImageSerializer data,) async {
     final response = await coreImageUploadPartialUpdateWithHttpInfo(id, data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -289,11 +256,11 @@ class CoreApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
     
     }
-    return Future<ImageSerializer>.value();
+    return null;
   }
 
   /// Performs an HTTP 'GET /core/image/upload/{id}/' operation and returns the [Response].
@@ -302,23 +269,17 @@ class CoreApi {
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
   Future<Response> coreImageUploadReadWithHttpInfo(int id,) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/core/image/upload/{id}/'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -329,8 +290,7 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -338,7 +298,7 @@ class CoreApi {
   ///
   /// * [int] id (required):
   ///   A unique integer value identifying this image.
-  Future<ImageSerializer> coreImageUploadRead(int id,) async {
+  Future<ImageSerializer?> coreImageUploadRead(int id,) async {
     final response = await coreImageUploadReadWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -346,11 +306,11 @@ class CoreApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
     
     }
-    return Future<ImageSerializer>.value();
+    return null;
   }
 
   /// Performs an HTTP 'PUT /core/image/upload/{id}/' operation and returns the [Response].
@@ -361,26 +321,17 @@ class CoreApi {
   ///
   /// * [ImageSerializer] data (required):
   Future<Response> coreImageUploadUpdateWithHttpInfo(int id, ImageSerializer data,) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/core/image/upload/{id}/'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -391,8 +342,7 @@ class CoreApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -402,7 +352,7 @@ class CoreApi {
   ///   A unique integer value identifying this image.
   ///
   /// * [ImageSerializer] data (required):
-  Future<ImageSerializer> coreImageUploadUpdate(int id, ImageSerializer data,) async {
+  Future<ImageSerializer?> coreImageUploadUpdate(int id, ImageSerializer data,) async {
     final response = await coreImageUploadUpdateWithHttpInfo(id, data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -410,10 +360,10 @@ class CoreApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ImageSerializer',) as ImageSerializer;
     
     }
-    return Future<ImageSerializer>.value();
+    return null;
   }
 }

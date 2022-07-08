@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -12,7 +12,7 @@ part of openapi.api;
 
 
 class ChatApi {
-  ChatApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ChatApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -21,24 +21,18 @@ class ChatApi {
   ///
   /// * [String] chatCode (required):
   Future<Response> chatGetAllChatMessagesListWithHttpInfo(String chatCode,) async {
-    // Verify required params are set.
-    if (chatCode == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: chatCode');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/chat/get-all-chat-messages/';
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'chat_code', chatCode));
+      queryParams.addAll(_queryParams('', 'chat_code', chatCode));
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -49,15 +43,14 @@ class ChatApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] chatCode (required):
-  Future<List<Message>> chatGetAllChatMessagesList(String chatCode,) async {
+  Future<List<Message>?> chatGetAllChatMessagesList(String chatCode,) async {
     final response = await chatGetAllChatMessagesListWithHttpInfo(chatCode,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -65,14 +58,14 @@ class ChatApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
       return (await apiClient.deserializeAsync(responseBody, 'List<Message>') as List)
         .cast<Message>()
-        .toList(growable: false);
+        .toList();
 
     }
-    return Future<List<Message>>.value();
+    return null;
   }
 
   /// Performs an HTTP 'GET /chat/get-all-chats/' operation and returns the [Response].
@@ -81,13 +74,12 @@ class ChatApi {
     final path = r'/chat/get-all-chats/';
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -98,12 +90,11 @@ class ChatApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
-  Future<List<InlineResponse2006>> chatGetAllChatsList() async {
+  Future<List<ChatGetAllChatsList200ResponseInner>?> chatGetAllChatsList() async {
     final response = await chatGetAllChatsListWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -111,13 +102,13 @@ class ChatApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<InlineResponse2006>') as List)
-        .cast<InlineResponse2006>()
-        .toList(growable: false);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ChatGetAllChatsList200ResponseInner>') as List)
+        .cast<ChatGetAllChatsList200ResponseInner>()
+        .toList();
 
     }
-    return Future<List<InlineResponse2006>>.value();
+    return null;
   }
 }

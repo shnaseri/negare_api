@@ -1,8 +1,8 @@
-# honar_api_v14.api.AuthApi
+# honar_api_v15.api.AuthApi
 
 ## Load the API package
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 ```
 
 All URIs are relative to *http://188.121.110.151:8000/api*
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -72,7 +72,7 @@ Takes a refresh type JSON web token and returns an access type JSON web token if
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -111,13 +111,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authMeList**
-> InlineResponse2004 authMeList()
+> AuthMeList200Response authMeList()
 
 
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**AuthMeList200Response**](AuthMeList200Response.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -197,13 +197,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authSendOtpCodeCreate**
-> InlineResponse2001 authSendOtpCodeCreate(id)
+> ArtArtPieceUpdate200Response authSendOtpCodeCreate(id)
 
 
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**ArtArtPieceUpdate200Response**](ArtArtPieceUpdate200Response.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Takes a token and indicates if it is valid.  This view provides no information a
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -289,13 +289,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authVerifyOtpCodeCreate**
-> InlineResponse2005 authVerifyOtpCodeCreate(id, data)
+> AuthVerifyOtpCodeCreate200Response authVerifyOtpCodeCreate(id, data)
 
 
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**AuthVerifyOtpCodeCreate200Response**](AuthVerifyOtpCodeCreate200Response.md)
 
 ### Authorization
 

@@ -1,8 +1,8 @@
-# honar_api_v14.model.ImageSerializer
+# honar_api_v15.model.ImageSerializer
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 ```
 
 ## Properties

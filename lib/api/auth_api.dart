@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -12,7 +12,7 @@ part of openapi.api;
 
 
 class AuthApi {
-  AuthApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  AuthApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -21,22 +21,16 @@ class AuthApi {
   ///
   /// * [TokenObtainPair] data (required):
   Future<Response> authLoginCreateWithHttpInfo(TokenObtainPair data,) async {
-    // Verify required params are set.
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/auth/login/';
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -47,15 +41,14 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [TokenObtainPair] data (required):
-  Future<AccessRefresh> authLoginCreate(TokenObtainPair data,) async {
+  Future<AccessRefresh?> authLoginCreate(TokenObtainPair data,) async {
     final response = await authLoginCreateWithHttpInfo(data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -63,11 +56,11 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AccessRefresh',) as AccessRefresh;
     
     }
-    return Future<AccessRefresh>.value();
+    return null;
   }
 
   /// Takes a refresh type JSON web token and returns an access type JSON web token if the refresh token is valid.
@@ -78,22 +71,16 @@ class AuthApi {
   ///
   /// * [TokenRefresh] data (required):
   Future<Response> authLogoutCreateWithHttpInfo(TokenRefresh data,) async {
-    // Verify required params are set.
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/auth/logout/';
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -104,8 +91,7 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -114,7 +100,7 @@ class AuthApi {
   /// Parameters:
   ///
   /// * [TokenRefresh] data (required):
-  Future<TokenRefresh> authLogoutCreate(TokenRefresh data,) async {
+  Future<TokenRefresh?> authLogoutCreate(TokenRefresh data,) async {
     final response = await authLogoutCreateWithHttpInfo(data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -122,11 +108,11 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TokenRefresh',) as TokenRefresh;
     
     }
-    return Future<TokenRefresh>.value();
+    return null;
   }
 
   /// Performs an HTTP 'GET /auth/me/' operation and returns the [Response].
@@ -135,13 +121,12 @@ class AuthApi {
     final path = r'/auth/me/';
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -152,12 +137,11 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
-  Future<InlineResponse2004> authMeList() async {
+  Future<AuthMeList200Response?> authMeList() async {
     final response = await authMeListWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -165,11 +149,11 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2004',) as InlineResponse2004;
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthMeList200Response',) as AuthMeList200Response;
     
     }
-    return Future<InlineResponse2004>.value();
+    return null;
   }
 
   /// Performs an HTTP 'POST /auth/register/' operation and returns the [Response].
@@ -177,22 +161,16 @@ class AuthApi {
   ///
   /// * [Register] data (required):
   Future<Response> authRegisterCreateWithHttpInfo(Register data,) async {
-    // Verify required params are set.
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/auth/register/';
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -203,15 +181,14 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [Register] data (required):
-  Future<UserId> authRegisterCreate(Register data,) async {
+  Future<UserId?> authRegisterCreate(Register data,) async {
     final response = await authRegisterCreateWithHttpInfo(data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -219,11 +196,11 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserId',) as UserId;
     
     }
-    return Future<UserId>.value();
+    return null;
   }
 
   /// Performs an HTTP 'POST /auth/send-otp-code/{id}/' operation and returns the [Response].
@@ -231,23 +208,17 @@ class AuthApi {
   ///
   /// * [String] id (required):
   Future<Response> authSendOtpCodeCreateWithHttpInfo(String id,) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/auth/send-otp-code/{id}/'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
-    Object postBody;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>[];
 
 
@@ -258,15 +229,14 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<InlineResponse2001> authSendOtpCodeCreate(String id,) async {
+  Future<ArtArtPieceUpdate200Response?> authSendOtpCodeCreate(String id,) async {
     final response = await authSendOtpCodeCreateWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -274,11 +244,11 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2001',) as InlineResponse2001;
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ArtArtPieceUpdate200Response',) as ArtArtPieceUpdate200Response;
     
     }
-    return Future<InlineResponse2001>.value();
+    return null;
   }
 
   /// Takes a token and indicates if it is valid.  This view provides no information about a token's fitness for a particular use.
@@ -289,22 +259,16 @@ class AuthApi {
   ///
   /// * [TokenVerify] data (required):
   Future<Response> authVerifyCreateWithHttpInfo(TokenVerify data,) async {
-    // Verify required params are set.
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/auth/verify/';
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -315,8 +279,7 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -325,7 +288,7 @@ class AuthApi {
   /// Parameters:
   ///
   /// * [TokenVerify] data (required):
-  Future<TokenVerify> authVerifyCreate(TokenVerify data,) async {
+  Future<TokenVerify?> authVerifyCreate(TokenVerify data,) async {
     final response = await authVerifyCreateWithHttpInfo(data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -333,11 +296,11 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TokenVerify',) as TokenVerify;
     
     }
-    return Future<TokenVerify>.value();
+    return null;
   }
 
   /// Performs an HTTP 'POST /auth/verify-otp-code/{id}/' operation and returns the [Response].
@@ -347,26 +310,17 @@ class AuthApi {
   ///
   /// * [OtpCode] data (required):
   Future<Response> authVerifyOtpCodeCreateWithHttpInfo(String id, OtpCode data,) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-    if (data == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: data');
-    }
-
     // ignore: prefer_const_declarations
     final path = r'/auth/verify-otp-code/{id}/'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
-    Object postBody = data;
+    Object? postBody = data;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['Bearer'];
     const contentTypes = <String>['application/json'];
 
 
@@ -377,8 +331,7 @@ class AuthApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -387,7 +340,7 @@ class AuthApi {
   /// * [String] id (required):
   ///
   /// * [OtpCode] data (required):
-  Future<InlineResponse2005> authVerifyOtpCodeCreate(String id, OtpCode data,) async {
+  Future<AuthVerifyOtpCodeCreate200Response?> authVerifyOtpCodeCreate(String id, OtpCode data,) async {
     final response = await authVerifyOtpCodeCreateWithHttpInfo(id, data,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -395,10 +348,10 @@ class AuthApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InlineResponse2005',) as InlineResponse2005;
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthVerifyOtpCodeCreate200Response',) as AuthVerifyOtpCodeCreate200Response;
     
     }
-    return Future<InlineResponse2005>.value();
+    return null;
   }
 }

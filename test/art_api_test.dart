@@ -1,33 +1,33 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for ArtApi
 void main() {
-  final instance = ArtApi();
+  // final instance = ArtApi();
 
   group('tests for ArtApi', () {
-    //Future<InlineResponse2001> artArtPieceContentUpdate(String id, ArtPieceContent data) async
+    //Future<ArtArtPieceUpdate200Response> artArtPieceContentUpdate(String id, ArtPieceContent data) async
     test('test artArtPieceContentUpdate', () async {
       // TODO
     });
 
-    //Future<InlineResponse200> artArtPieceCoverCreate(ArtPieceCover data) async
+    //Future<ArtArtPieceCoverCreate200Response> artArtPieceCoverCreate(ArtPieceCover data) async
     test('test artArtPieceCoverCreate', () async {
       // TODO
     });
 
-    //Future<InlineResponse2002> artArtPieceLikeUpdate(String id) async
+    //Future<ArtArtPieceLikeUpdate200Response> artArtPieceLikeUpdate(String id) async
     test('test artArtPieceLikeUpdate', () async {
       // TODO
     });
@@ -37,7 +37,7 @@ void main() {
       // TODO
     });
 
-    //Future<InlineResponse2001> artArtPieceUpdate(String id, ArtPieceDetail data) async
+    //Future<ArtArtPieceUpdate200Response> artArtPieceUpdate(String id, ArtPieceDetail data) async
     test('test artArtPieceUpdate', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    //Future<InlineResponse2003> artGalleryRead(String id) async
+    //Future<ArtGalleryRead200Response> artGalleryRead(String id, { bool business }) async
     test('test artGalleryRead', () async {
       // TODO
     });

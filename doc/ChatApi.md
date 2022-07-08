@@ -1,8 +1,8 @@
-# honar_api_v14.api.ChatApi
+# honar_api_v15.api.ChatApi
 
 ## Load the API package
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 ```
 
 All URIs are relative to *http://188.121.110.151:8000/api*
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -59,13 +59,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **chatGetAllChatsList**
-> List<InlineResponse2006> chatGetAllChatsList()
+> List<ChatGetAllChatsList200ResponseInner> chatGetAllChatsList()
 
 
 
 ### Example
 ```dart
-import 'package:honar_api_v14/api.dart';
+import 'package:honar_api_v15/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -86,7 +86,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<InlineResponse2006>**](InlineResponse2006.md)
+[**List<ChatGetAllChatsList200ResponseInner>**](ChatGetAllChatsList200ResponseInner.md)
 
 ### Authorization
 
