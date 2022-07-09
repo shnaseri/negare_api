@@ -1,8 +1,8 @@
-# honar_api_v15.model.ArtGalleryRead200ResponsePostsInner
+# honar_api_v16.model.ArtGalleryRead200ResponsePostsInner
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v15/api.dart';
+import 'package:honar_api_v16/api.dart';
 ```
 
 ## Properties

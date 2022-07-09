@@ -1,8 +1,8 @@
-# honar_api_v15.model.ArtPieceDetail
+# honar_api_v16.model.ArtPieceDetail
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v15/api.dart';
+import 'package:honar_api_v16/api.dart';
 ```
 
 ## Properties
