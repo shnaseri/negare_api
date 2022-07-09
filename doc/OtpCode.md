@@ -1,8 +1,8 @@
-# honar_api_v16.model.OtpCode
+# honar_api_v17.model.OtpCode
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v16/api.dart';
+import 'package:honar_api_v17/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# honar_api_v16.model.SearchResult
+# honar_api_v17.model.SearchResult
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v16/api.dart';
+import 'package:honar_api_v17/api.dart';
 ```
 
 ## Properties
