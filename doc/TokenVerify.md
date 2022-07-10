@@ -1,8 +1,8 @@
-# honar_api_v18.model.TokenVerify
+# honar_api_v19.model.TokenVerify
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v18/api.dart';
+import 'package:honar_api_v19/api.dart';
 ```
 
 ## Properties
