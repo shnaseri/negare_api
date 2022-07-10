@@ -1,8 +1,8 @@
-# honar_api_v19.model.ArtGalleryRead200ResponseOwner
+# honar_api_v20.model.ArtGalleryRead200ResponseOwner
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v19/api.dart';
+import 'package:honar_api_v20/api.dart';
 ```
 
 ## Properties
