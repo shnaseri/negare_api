@@ -1,8 +1,8 @@
-# honar_api_v17.api.CoreApi
+# honar_api_v18.api.CoreApi
 
 ## Load the API package
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 ```
 
 All URIs are relative to *http://188.121.110.151:8000/api*
@@ -10,6 +10,7 @@ All URIs are relative to *http://188.121.110.151:8000/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**coreContentUpdate**](CoreApi.md#corecontentupdate) | **PUT** /core/content/ | 
+[**coreHomepageList**](CoreApi.md#corehomepagelist) | **GET** /core/homepage/ | 
 [**coreImageUploadCreate**](CoreApi.md#coreimageuploadcreate) | **POST** /core/image/upload/ | 
 [**coreImageUploadDelete**](CoreApi.md#coreimageuploaddelete) | **DELETE** /core/image/upload/{id}/ | 
 [**coreImageUploadList**](CoreApi.md#coreimageuploadlist) | **GET** /core/image/upload/ | 
@@ -25,7 +26,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -63,6 +64,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **coreHomepageList**
+> CoreHomepageList200Response coreHomepageList(page, pageCount)
+
+
+
+### Example
+```dart
+import 'package:honar_api_v18/api.dart';
+// TODO Configure API key authorization: Bearer
+//defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKeyPrefix = 'Bearer';
+
+final api_instance = CoreApi();
+final page = 56; // int | 
+final pageCount = 56; // int | 
+
+try {
+    final result = api_instance.coreHomepageList(page, pageCount);
+    print(result);
+} catch (e) {
+    print('Exception when calling CoreApi->coreHomepageList: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] [default to 1]
+ **pageCount** | **int**|  | [optional] [default to 10]
+
+### Return type
+
+[**CoreHomepageList200Response**](CoreHomepageList200Response.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **coreImageUploadCreate**
 > ImageSerializer coreImageUploadCreate(data)
 
@@ -70,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -115,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -161,7 +209,7 @@ Examines request and allows certain fields to be expanded within the list view.
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -202,7 +250,7 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -249,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -294,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 // TODO Configure API key authorization: Bearer
 //defaultApiClient.getAuthentication<ApiKeyAuth>('Bearer').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed

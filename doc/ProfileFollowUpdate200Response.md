@@ -1,8 +1,8 @@
-# honar_api_v17.model.ProfileFollowUpdate200Response
+# honar_api_v18.model.ProfileFollowUpdate200Response
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 ```
 
 ## Properties

@@ -18,7 +18,9 @@ class ArtGalleryRead200ResponsePostsInner {
     this.type,
     this.image,
     this.countLike,
+    this.countComment,
     this.price,
+    this.description,
   });
 
   ///
@@ -67,7 +69,23 @@ class ArtGalleryRead200ResponsePostsInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  int? countComment;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? price;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? description;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ArtGalleryRead200ResponsePostsInner &&
@@ -76,7 +94,9 @@ class ArtGalleryRead200ResponsePostsInner {
      other.type == type &&
      other.image == image &&
      other.countLike == countLike &&
-     other.price == price;
+     other.countComment == countComment &&
+     other.price == price &&
+     other.description == description;
 
   @override
   int get hashCode =>
@@ -86,10 +106,12 @@ class ArtGalleryRead200ResponsePostsInner {
     (type == null ? 0 : type!.hashCode) +
     (image == null ? 0 : image!.hashCode) +
     (countLike == null ? 0 : countLike!.hashCode) +
-    (price == null ? 0 : price!.hashCode);
+    (countComment == null ? 0 : countComment!.hashCode) +
+    (price == null ? 0 : price!.hashCode) +
+    (description == null ? 0 : description!.hashCode);
 
   @override
-  String toString() => 'ArtGalleryRead200ResponsePostsInner[id=$id, title=$title, type=$type, image=$image, countLike=$countLike, price=$price]';
+  String toString() => 'ArtGalleryRead200ResponsePostsInner[id=$id, title=$title, type=$type, image=$image, countLike=$countLike, countComment=$countComment, price=$price, description=$description]';
 
   Map<String, dynamic> toJson() {
     final _json = <String, dynamic>{};
@@ -108,8 +130,14 @@ class ArtGalleryRead200ResponsePostsInner {
     if (countLike != null) {
       _json[r'count_like'] = countLike;
     }
+    if (countComment != null) {
+      _json[r'count_comment'] = countComment;
+    }
     if (price != null) {
       _json[r'price'] = price;
+    }
+    if (description != null) {
+      _json[r'description'] = description;
     }
     return _json;
   }
@@ -138,7 +166,9 @@ class ArtGalleryRead200ResponsePostsInner {
         type: mapValueOfType<String>(json, r'type'),
         image: mapValueOfType<String>(json, r'image'),
         countLike: mapValueOfType<int>(json, r'count_like'),
+        countComment: mapValueOfType<int>(json, r'count_comment'),
         price: mapValueOfType<int>(json, r'price'),
+        description: mapValueOfType<String>(json, r'description'),
       );
     }
     return null;

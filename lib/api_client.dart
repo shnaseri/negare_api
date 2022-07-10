@@ -236,14 +236,18 @@ class ApiClient {
           return Category.fromJson(value);
         case 'ChatGetAllChatsList200ResponseInner':
           return ChatGetAllChatsList200ResponseInner.fromJson(value);
-        case 'ChatGetAllChatsList200ResponseInnerUser':
-          return ChatGetAllChatsList200ResponseInnerUser.fromJson(value);
         case 'ChildComment':
           return ChildComment.fromJson(value);
         case 'Comments':
           return Comments.fromJson(value);
         case 'CoreContentUpdate200Response':
           return CoreContentUpdate200Response.fromJson(value);
+        case 'CoreHomepageList200Response':
+          return CoreHomepageList200Response.fromJson(value);
+        case 'CoreHomepageList200ResponseOffers':
+          return CoreHomepageList200ResponseOffers.fromJson(value);
+        case 'CoreHomepageList200ResponseStats':
+          return CoreHomepageList200ResponseStats.fromJson(value);
         case 'FullUser':
           return FullUser.fromJson(value);
         case 'ImageSerializer':
@@ -254,6 +258,8 @@ class ApiClient {
           return OtpCode.fromJson(value);
         case 'ProfileFollowUpdate200Response':
           return ProfileFollowUpdate200Response.fromJson(value);
+        case 'ProfileToggleBusinessUpdate200Response':
+          return ProfileToggleBusinessUpdate200Response.fromJson(value);
         case 'Register':
           return Register.fromJson(value);
         case 'SearchResult':

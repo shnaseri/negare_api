@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 import 'package:test/test.dart';
 
 // tests for ArtGalleryRead200ResponseProfile
@@ -28,6 +28,11 @@ void main() {
 
     // bool isFollowedByYou
     test('to test the property `isFollowedByYou`', () async {
+      // TODO
+    });
+
+    // bool isBusiness (default value: false)
+    test('to test the property `isBusiness`', () async {
       // TODO
     });
 

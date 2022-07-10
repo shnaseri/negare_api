@@ -43,7 +43,7 @@ class ChatGetAllChatsList200ResponseInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ChatGetAllChatsList200ResponseInnerUser? user;
+  ArtGalleryRead200ResponseOwner? user;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -135,7 +135,7 @@ class ChatGetAllChatsList200ResponseInner {
       return ChatGetAllChatsList200ResponseInner(
         id: mapValueOfType<int>(json, r'id'),
         chatCode: mapValueOfType<String>(json, r'chat_code'),
-        user: ChatGetAllChatsList200ResponseInnerUser.fromJson(json[r'user']),
+        user: ArtGalleryRead200ResponseOwner.fromJson(json[r'user']),
         lastMessage: mapValueOfType<String>(json, r'last_message'),
         updatedAt: mapDateTime(json, r'updated_at', ''),
         createdAt: mapDateTime(json, r'created_at', ''),

@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 import 'package:test/test.dart';
 
 // tests for ArtGalleryRead200ResponseOwner
@@ -21,13 +21,13 @@ void main() {
       // TODO
     });
 
-    // String profilePhoto
-    test('to test the property `profilePhoto`', () async {
+    // String fullName
+    test('to test the property `fullName`', () async {
       // TODO
     });
 
-    // String fullName
-    test('to test the property `fullName`', () async {
+    // String profilePhoto
+    test('to test the property `profilePhoto`', () async {
       // TODO
     });
 

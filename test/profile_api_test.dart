@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 import 'package:test/test.dart';
 
 
@@ -34,6 +34,11 @@ void main() {
 
     //Future<FullUser> profileRead(int id) async
     test('test profileRead', () async {
+      // TODO
+    });
+
+    //Future<ProfileToggleBusinessUpdate200Response> profileToggleBusinessUpdate() async
+    test('test profileToggleBusinessUpdate', () async {
       // TODO
     });
 

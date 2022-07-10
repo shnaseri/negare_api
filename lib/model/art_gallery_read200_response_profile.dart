@@ -16,6 +16,7 @@ class ArtGalleryRead200ResponseProfile {
     this.followerCount,
     this.followingCount,
     this.isFollowedByYou,
+    this.isBusiness = false,
   });
 
   ///
@@ -42,21 +43,25 @@ class ArtGalleryRead200ResponseProfile {
   ///
   bool? isFollowedByYou;
 
+  bool isBusiness;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ArtGalleryRead200ResponseProfile &&
      other.followerCount == followerCount &&
      other.followingCount == followingCount &&
-     other.isFollowedByYou == isFollowedByYou;
+     other.isFollowedByYou == isFollowedByYou &&
+     other.isBusiness == isBusiness;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (followerCount == null ? 0 : followerCount!.hashCode) +
     (followingCount == null ? 0 : followingCount!.hashCode) +
-    (isFollowedByYou == null ? 0 : isFollowedByYou!.hashCode);
+    (isFollowedByYou == null ? 0 : isFollowedByYou!.hashCode) +
+    (isBusiness.hashCode);
 
   @override
-  String toString() => 'ArtGalleryRead200ResponseProfile[followerCount=$followerCount, followingCount=$followingCount, isFollowedByYou=$isFollowedByYou]';
+  String toString() => 'ArtGalleryRead200ResponseProfile[followerCount=$followerCount, followingCount=$followingCount, isFollowedByYou=$isFollowedByYou, isBusiness=$isBusiness]';
 
   Map<String, dynamic> toJson() {
     final _json = <String, dynamic>{};
@@ -69,6 +74,7 @@ class ArtGalleryRead200ResponseProfile {
     if (isFollowedByYou != null) {
       _json[r'is_followed_by_you'] = isFollowedByYou;
     }
+      _json[r'is_business'] = isBusiness;
     return _json;
   }
 
@@ -94,6 +100,7 @@ class ArtGalleryRead200ResponseProfile {
         followerCount: mapValueOfType<int>(json, r'follower_count'),
         followingCount: mapValueOfType<int>(json, r'following_count'),
         isFollowedByYou: mapValueOfType<bool>(json, r'is_followed_by_you'),
+        isBusiness: mapValueOfType<bool>(json, r'is_business') ?? false,
       );
     }
     return null;

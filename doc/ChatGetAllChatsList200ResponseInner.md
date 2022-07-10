@@ -1,8 +1,8 @@
-# honar_api_v17.model.ChatGetAllChatsList200ResponseInner
+# honar_api_v18.model.ChatGetAllChatsList200ResponseInner
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 ```
 
 ## Properties
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **chatCode** | **String** |  | [optional] 
-**user** | [**ChatGetAllChatsList200ResponseInnerUser**](ChatGetAllChatsList200ResponseInnerUser.md) |  | [optional] 
+**user** | [**ArtGalleryRead200ResponseOwner**](ArtGalleryRead200ResponseOwner.md) |  | [optional] 
 **lastMessage** | **String** |  | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 

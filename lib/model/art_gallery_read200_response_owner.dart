@@ -14,8 +14,8 @@ class ArtGalleryRead200ResponseOwner {
   /// Returns a new [ArtGalleryRead200ResponseOwner] instance.
   ArtGalleryRead200ResponseOwner({
     this.id,
-    this.profilePhoto,
     this.fullName,
+    this.profilePhoto,
   });
 
   ///
@@ -32,7 +32,7 @@ class ArtGalleryRead200ResponseOwner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? profilePhoto;
+  String? fullName;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -40,34 +40,34 @@ class ArtGalleryRead200ResponseOwner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? fullName;
+  String? profilePhoto;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ArtGalleryRead200ResponseOwner &&
      other.id == id &&
-     other.profilePhoto == profilePhoto &&
-     other.fullName == fullName;
+     other.fullName == fullName &&
+     other.profilePhoto == profilePhoto;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id == null ? 0 : id!.hashCode) +
-    (profilePhoto == null ? 0 : profilePhoto!.hashCode) +
-    (fullName == null ? 0 : fullName!.hashCode);
+    (fullName == null ? 0 : fullName!.hashCode) +
+    (profilePhoto == null ? 0 : profilePhoto!.hashCode);
 
   @override
-  String toString() => 'ArtGalleryRead200ResponseOwner[id=$id, profilePhoto=$profilePhoto, fullName=$fullName]';
+  String toString() => 'ArtGalleryRead200ResponseOwner[id=$id, fullName=$fullName, profilePhoto=$profilePhoto]';
 
   Map<String, dynamic> toJson() {
     final _json = <String, dynamic>{};
     if (id != null) {
       _json[r'id'] = id;
     }
-    if (profilePhoto != null) {
-      _json[r'profile_photo'] = profilePhoto;
-    }
     if (fullName != null) {
       _json[r'full_name'] = fullName;
+    }
+    if (profilePhoto != null) {
+      _json[r'profile_photo'] = profilePhoto;
     }
     return _json;
   }
@@ -92,8 +92,8 @@ class ArtGalleryRead200ResponseOwner {
 
       return ArtGalleryRead200ResponseOwner(
         id: mapValueOfType<int>(json, r'id'),
-        profilePhoto: mapValueOfType<String>(json, r'profile_photo'),
         fullName: mapValueOfType<String>(json, r'full_name'),
+        profilePhoto: mapValueOfType<String>(json, r'profile_photo'),
       );
     }
     return null;

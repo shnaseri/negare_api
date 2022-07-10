@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v17/api.dart';
+import 'package:honar_api_v18/api.dart';
 import 'package:test/test.dart';
 
 // tests for ChatGetAllChatsList200ResponseInner
@@ -26,7 +26,7 @@ void main() {
       // TODO
     });
 
-    // ChatGetAllChatsList200ResponseInnerUser user
+    // ArtGalleryRead200ResponseOwner user
     test('to test the property `user`', () async {
       // TODO
     });
