@@ -1,8 +1,8 @@
-# honar_api_v20.model.FullUser
+# honar_api_v21.model.FullUser
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v20/api.dart';
+import 'package:honar_api_v21/api.dart';
 ```
 
 ## Properties

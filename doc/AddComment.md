@@ -1,8 +1,8 @@
-# honar_api_v20.model.AddComment
+# honar_api_v21.model.AddComment
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v20/api.dart';
+import 'package:honar_api_v21/api.dart';
 ```
 
 ## Properties
