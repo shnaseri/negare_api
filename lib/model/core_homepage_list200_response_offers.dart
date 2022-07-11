@@ -13,9 +13,9 @@ part of openapi.api;
 class CoreHomepageList200ResponseOffers {
   /// Returns a new [CoreHomepageList200ResponseOffers] instance.
   CoreHomepageList200ResponseOffers({
-    this.mostCommentedPostInLast7Days,
-    this.mostLikedPostInLast7Days,
-    this.mostFavoriteUserInLast7Days,
+    this.mostCommentedArtPieceLast7Days,
+    this.mostLikedArtPieceLast7Days,
+    this.mostCommentedUserLast7Days,
   });
 
   ///
@@ -24,7 +24,7 @@ class CoreHomepageList200ResponseOffers {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ArtGalleryRead200ResponsePostsInner? mostCommentedPostInLast7Days;
+  ArtGalleryRead200ResponsePostsInner? mostCommentedArtPieceLast7Days;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -32,7 +32,7 @@ class CoreHomepageList200ResponseOffers {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ArtGalleryRead200ResponsePostsInner? mostLikedPostInLast7Days;
+  ArtGalleryRead200ResponsePostsInner? mostLikedArtPieceLast7Days;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -40,34 +40,34 @@ class CoreHomepageList200ResponseOffers {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ArtGalleryRead200ResponseOwner? mostFavoriteUserInLast7Days;
+  ArtGalleryRead200ResponseOwner? mostCommentedUserLast7Days;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CoreHomepageList200ResponseOffers &&
-     other.mostCommentedPostInLast7Days == mostCommentedPostInLast7Days &&
-     other.mostLikedPostInLast7Days == mostLikedPostInLast7Days &&
-     other.mostFavoriteUserInLast7Days == mostFavoriteUserInLast7Days;
+     other.mostCommentedArtPieceLast7Days == mostCommentedArtPieceLast7Days &&
+     other.mostLikedArtPieceLast7Days == mostLikedArtPieceLast7Days &&
+     other.mostCommentedUserLast7Days == mostCommentedUserLast7Days;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (mostCommentedPostInLast7Days == null ? 0 : mostCommentedPostInLast7Days!.hashCode) +
-    (mostLikedPostInLast7Days == null ? 0 : mostLikedPostInLast7Days!.hashCode) +
-    (mostFavoriteUserInLast7Days == null ? 0 : mostFavoriteUserInLast7Days!.hashCode);
+    (mostCommentedArtPieceLast7Days == null ? 0 : mostCommentedArtPieceLast7Days!.hashCode) +
+    (mostLikedArtPieceLast7Days == null ? 0 : mostLikedArtPieceLast7Days!.hashCode) +
+    (mostCommentedUserLast7Days == null ? 0 : mostCommentedUserLast7Days!.hashCode);
 
   @override
-  String toString() => 'CoreHomepageList200ResponseOffers[mostCommentedPostInLast7Days=$mostCommentedPostInLast7Days, mostLikedPostInLast7Days=$mostLikedPostInLast7Days, mostFavoriteUserInLast7Days=$mostFavoriteUserInLast7Days]';
+  String toString() => 'CoreHomepageList200ResponseOffers[mostCommentedArtPieceLast7Days=$mostCommentedArtPieceLast7Days, mostLikedArtPieceLast7Days=$mostLikedArtPieceLast7Days, mostCommentedUserLast7Days=$mostCommentedUserLast7Days]';
 
   Map<String, dynamic> toJson() {
     final _json = <String, dynamic>{};
-    if (mostCommentedPostInLast7Days != null) {
-      _json[r'most_commented_post_in_last_7_days'] = mostCommentedPostInLast7Days;
+    if (mostCommentedArtPieceLast7Days != null) {
+      _json[r'most_commented_art_piece_last_7_days'] = mostCommentedArtPieceLast7Days;
     }
-    if (mostLikedPostInLast7Days != null) {
-      _json[r'most_liked_post_in_last_7_days'] = mostLikedPostInLast7Days;
+    if (mostLikedArtPieceLast7Days != null) {
+      _json[r'most_liked_art_piece_last_7_days'] = mostLikedArtPieceLast7Days;
     }
-    if (mostFavoriteUserInLast7Days != null) {
-      _json[r'most_favorite_user_in_last_7_days'] = mostFavoriteUserInLast7Days;
+    if (mostCommentedUserLast7Days != null) {
+      _json[r'most_commented_user_last_7_days'] = mostCommentedUserLast7Days;
     }
     return _json;
   }
@@ -91,9 +91,9 @@ class CoreHomepageList200ResponseOffers {
       }());
 
       return CoreHomepageList200ResponseOffers(
-        mostCommentedPostInLast7Days: ArtGalleryRead200ResponsePostsInner.fromJson(json[r'most_commented_post_in_last_7_days']),
-        mostLikedPostInLast7Days: ArtGalleryRead200ResponsePostsInner.fromJson(json[r'most_liked_post_in_last_7_days']),
-        mostFavoriteUserInLast7Days: ArtGalleryRead200ResponseOwner.fromJson(json[r'most_favorite_user_in_last_7_days']),
+        mostCommentedArtPieceLast7Days: ArtGalleryRead200ResponsePostsInner.fromJson(json[r'most_commented_art_piece_last_7_days']),
+        mostLikedArtPieceLast7Days: ArtGalleryRead200ResponsePostsInner.fromJson(json[r'most_liked_art_piece_last_7_days']),
+        mostCommentedUserLast7Days: ArtGalleryRead200ResponseOwner.fromJson(json[r'most_commented_user_last_7_days']),
       );
     }
     return null;

@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:honar_api_v21/api.dart';
+import 'package:honar_api_v22/api.dart';
 import 'package:test/test.dart';
 
 // tests for CoreHomepageList200ResponseOffers
@@ -16,18 +16,18 @@ void main() {
   // final instance = CoreHomepageList200ResponseOffers();
 
   group('test CoreHomepageList200ResponseOffers', () {
-    // ArtGalleryRead200ResponsePostsInner mostCommentedPostInLast7Days
-    test('to test the property `mostCommentedPostInLast7Days`', () async {
+    // ArtGalleryRead200ResponsePostsInner mostCommentedArtPieceLast7Days
+    test('to test the property `mostCommentedArtPieceLast7Days`', () async {
       // TODO
     });
 
-    // ArtGalleryRead200ResponsePostsInner mostLikedPostInLast7Days
-    test('to test the property `mostLikedPostInLast7Days`', () async {
+    // ArtGalleryRead200ResponsePostsInner mostLikedArtPieceLast7Days
+    test('to test the property `mostLikedArtPieceLast7Days`', () async {
       // TODO
     });
 
-    // ArtGalleryRead200ResponseOwner mostFavoriteUserInLast7Days
-    test('to test the property `mostFavoriteUserInLast7Days`', () async {
+    // ArtGalleryRead200ResponseOwner mostCommentedUserLast7Days
+    test('to test the property `mostCommentedUserLast7Days`', () async {
       // TODO
     });
 

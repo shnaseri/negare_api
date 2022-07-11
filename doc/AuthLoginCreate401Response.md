@@ -1,8 +1,8 @@
-# honar_api_v21.model.AuthLoginCreate401Response
+# honar_api_v22.model.AuthLoginCreate401Response
 
 ## Load the model package
 ```dart
-import 'package:honar_api_v21/api.dart';
+import 'package:honar_api_v22/api.dart';
 ```
 
 ## Properties
