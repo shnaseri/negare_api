@@ -20,6 +20,8 @@ dependencies:
     git: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 ```
 
+
+
 ### Local
 To use the package in your local drive, add the following dependency to your pubspec.yaml
 ```
